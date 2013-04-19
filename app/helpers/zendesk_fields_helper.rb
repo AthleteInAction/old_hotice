@@ -1,0 +1,2 @@
+module ZendeskFieldsHelper
+end

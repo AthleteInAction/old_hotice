@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  attachment_id: 1
+  header: MyString
+  field_name: MyString
+  field_id: 1
+  custom_field: false
+  active: false
+
+two:
+  attachment_id: 1
+  header: MyString
+  field_name: MyString
+  field_id: 1
+  custom_field: false
+  active: false

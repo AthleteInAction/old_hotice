@@ -1,0 +1,272 @@
+<script>
+// Monitor Status
+////////////////////////////////////////////////////////////
+function monitorStatus(id){
+	
+	console.log('Start: '+id);
+	
+	$.ajax({
+		
+		url: '/imports/<%= @profile.id %>/csv/<%= params[:type] %>/attachments/'+id+'/status.json',
+		contentType: 'application/json',
+		data: '',
+		success: function(data){
+			console.log('Progress: '+data.pct+'%');
+			$('#status_'+id).css('width',data.pct+'%')
+			$('#astat_'+id+'_success').html(data.success);
+			$('#astat_'+id+'_error').html(data.errors);
+			if (data.pct == 100){
+				$('#bar_'+id).remove();
+				$('#complete_'+id).show();
+				setTimeout('window.location = window.location;',500);
+			} else {
+				setTimeout('monitorStatus('+id+');',1000);
+			}
+		},
+		complete: function(){
+			
+		}
+		
+	});
+	
+}
+////////////////////////////////////////////////////////////
+</script>
+
+<div style="margin-top:50px;" align="center">
+	
+	<div class="breadcrumb">
+		<span class="LIT">Extraction</span>
+		<% if params[:type] != 'ticket_comments' %>
+		<span class="non">&nbsp;|&nbsp;</span>
+		<span class=""><%= link_to 'Mapping',"/imports/#{params[:profile_id]}/mapping/#{params[:type]}" %></span>
+		<span class="non">&nbsp;|&nbsp;</span>
+		<span class=""><%= link_to 'Import',"/imports/#{params[:profile_id]}/import/#{params[:type]}" %></span>
+		<% end %>
+	</div>
+	<div style="margin:20px 0 20px 0;">
+		
+		<% options = [['Organizations','organizations'],['Users','users'],['Groups','groups'],['Tickets','tickets'],['Ticket Comments','ticket_comments']] %>
+		<% options.each_with_index do |o,i| %>
+			<%
+			clas = ''
+			clas = 'LIT' if o[1] == params[:type]
+			%>
+			<%= (i+1) %>. <%= link_to o[0],o[1],class: clas %>&nbsp;&nbsp;
+		<% end %>
+		
+	</div>
+	
+	<table cellpadding="4" cellspacing="1" border="0">
+		
+		<tr>
+			<th align="left" valign="middle">
+				
+				<%= form_for Attachment.new, html: {multipart: true},url: '/imports/'+@profile.id.to_s+'/csv/'+params[:type].to_s+'/upload',id: 'file_form' do |f| %>
+
+					<div><%= f.file_field :file,accept: 'text/csv',class: 'AUTOSELECT' %></div>
+
+				<% end %>
+				
+			</th>
+		</tr>
+		<tr>
+			<td align="left" valign="top">
+				
+				<% custom_fields = CustomFields.where("profile_id = #{params[:profile_id]}") %>
+				<% zd_fields = ZendeskField.where("state = '#{params[:type]}' AND active = 1 AND map = 1") %>
+				
+				<% atts = Attachment.where("active = 1 AND profile_id = #{@profile.id} AND state = '#{params[:type]}'").order('file ASC') %>
+				<% if atts.count == 0 %>
+					NO FILES UPLOADED
+				<% end %>
+				<% atts.each do |a| %>
+
+					<% locked  = a.locked %>
+					<% oc = {'false' => 'Open','true' => 'Close'} %>
+					<% nn = {'false' => ' NONE','true' => ''} %>
+					<% opp = {'true' => ' NONE','false' => ''} %>
+
+					<div class="ATTACHMENT">
+
+						<div class="ORANGE_ITEM" align="center">
+						<table cellpadding="0" cellspacing="0" border="0" width="">
+
+							<tr>
+								<td align="left" valign="middle"><%= a.id %>&nbsp;||&nbsp;<%= a.file.url.split('/').last %>&nbsp;(<%= a.total %>)</td>
+								<td align="right" valign="middle" width="10">
+
+									<%= form_for a,html: {caction: attachments_path+'/'+a.id.to_s,cmethod: "PUT",class: "BSUB"} do |f| %>
+
+										<%= f.hidden_field :open,class: "open_close" %>
+										<%= f.submit oc[a.open.to_s],class: "FILE_OPEN" %>
+
+									<% end %>
+
+								</td>
+								<% if a.status.to_s != 'ready' %>
+								<td align="right" valign="middle" width="10">
+
+									<%= form_tag '/imports/'+@profile.id.to_s+'/csv/'+params[:type].to_s+'/attachments/'+a.id.to_s+'/reset',method: :get do %>
+
+										<%= submit_tag 'Reset',confirm: 'Are you sure?' %>
+
+									<% end %>
+
+								</td>
+								<% end %>
+								<td align="right" valign="middle" width="10">
+
+									<%= form_tag '/imports/'+@profile.id.to_s+'/csv/'+params[:type].to_s+'/attachments/'+a.id.to_s+'/delete',method: :get do %>
+
+										<%= submit_tag 'Delete',confirm: 'Are you sure?' %>
+
+									<% end %>
+
+								</td>
+							</tr>
+
+						</table>
+						</div>
+
+						<div class="INNER<%= nn[a.open.to_s] %>" align="center">
+
+							<div class="ATTACHMENT_SPACER"></div>
+							<table cellspacing="1" cellpadding="4" border="0" width="" class="TABLE">
+							<% Keys.where("attachment_id = #{a.id}").order('id ASC').each do |k| %>
+
+								<tr>
+									<%= form_for k,html: {class: 'BSUB',caction: keys_path+'/'+k.id.to_s,cmethod: "PUT"} do |f| %>
+									<td align="center" valign="middle" class="TD_UP" width="5">
+
+										<%= f.check_box :active,class: 'UPKEY',key: k.id,off: locked %>
+										<%= f.hidden_field :profile_id,value: params[:profile_id] %>
+
+									</td>
+									<td align="left" valign="middle" class="TD_UP"><%= k.header %></td>
+									<td align="right" valign="middle" class="TD_UP" width="10">
+
+										<select name="keys[field_id]" id="keys_field_id_<%= a.id %>" class="UPKEY" off="<%= locked %>" key="<%= k.id %>" cf="<%= zd_fields.count %>">
+											<% zd_fields.order('db_name ASC').each do |z| %>
+												<% selected = '' %>
+												<% selected = ' selected="selected"' if z.id.to_f == k.field_id.to_f %>
+												<option value="<%= z.id %>"<%= selected %>><%= z.display_name %></option>									
+											<% end %>
+											<% if params[:type] == 'tickets' %>
+
+												<% custom_fields.each do |cf| %>
+													<% selected = '' %>
+													<% selected = ' selected="selected"' if cf.id.to_f == k.field_id.to_f %>
+													<option value="<%= cf.id %>"<%= selected %>>CF: <%= cf.display_name %></option>
+												<% end %>
+
+											<% end %>
+										</select>
+
+									</td>
+									<% end %>
+								</tr>
+
+							<% end %>
+
+								<tr>
+
+									<td colspan="3" align="center" valign="middle">
+
+										<div class="ATTACHMENT_SPACER" style="width:71%;"></div>
+
+										<div class="ORANGE_ITEM ATTACHMENT_CONTROL">
+
+											<%= form_tag '/imports/'+@profile.id.to_s+'/csv/'+params[:type].to_s+'/attachments/'+a.id.to_s+'/extract',method: :get,class: opp[locked.to_s] do %>
+
+												<%= submit_tag 'EXTRACT',confirm: 'Are you sure?' %>
+
+											<% end %>
+
+											<% com = ' NONE' %>
+											<% if a.status.to_s == 'extracting' %>
+
+												<div id="bar_<%= a.id %>" class="bar<%= nn[locked.to_s] %>" align="left">
+													<%
+													w = ((a.complete.to_f/a.total.to_f)*100.to_f).round
+													%>
+													<div id="status_<%= a.id %>" class="status" style="width:<%= w %>%;" align="center">&nbsp;</div>
+												</div>
+
+											<script>$(function(){monitorStatus(<%= a.id %>);});</script>
+											<%
+											elsif a.status.to_s == 'complete'
+
+												com = ''
+
+											end
+											%>
+											<div id="complete_<%= a.id %>" class="complete<%= com %>">COMPLETE!</div>
+
+										</div>
+
+									</td>
+
+								</tr>
+
+								<% CsvAttempt.where("file_id = #{a.id}").order("id DESC").limit(1).each do |at| %>
+								<tr>
+
+									<td colspan="3" align="left" valign="middle">
+
+										<table cellpadding="0" cellspacing="0" border="0" width="100%" style="font-size:11px;">
+
+											<tr style="font-size:9px;">
+
+												<th align="left" valign="middle">Date</th>
+												<th align="center" valign="middle">Success</th>
+												<th align="center" valign="middle">Errors</th>
+												<th align="center" valign="middle">Total</th>
+												<th align="center" valign="middle"></th>
+												<th align="center" valign="middle"></th>
+
+											</tr>
+											<tr style="font-size:9px;">
+
+												<% csv_errors = CsvErrors.where("file_id = #{a.id}").count %>
+
+												<td align="left" valign="middle" style="font-size:10px;"><%= at.created_at %></td>
+												<td align="center" valign="middle" style="font-size:10px;" id="astat_<%= a.id %>_success"><%= GetModel(params[:type]).where("file_id = #{a.id}").count %></td>
+												<td align="center" valign="middle" style="font-size:10px;" id="astat_<%= a.id %>_error"><%= csv_errors %></td>
+												<td align="center" valign="middle" style="font-size:10px;"><%= a.total %></td>
+												<td align="right" valign="middle" style="font-size:10px;">
+													<% if csv_errors > 0 %>
+													<%= button_to 'Log','/imports/'+params[:profile_id].to_s+'/csv/'+params[:type].to_s+'/attachments/'+a.id.to_s+'/log.csv' %>
+													<% end %>
+												</td>
+												<td align="right" valign="middle" style="font-size:10px;">
+													<% if csv_errors > 0 %>
+													<%= button_to 'Csv','/imports/'+params[:profile_id].to_s+'/csv/'+params[:type].to_s+'/attachments/'+a.id.to_s+'/raw.csv' %>
+													<% end %>
+												</td>
+
+											</tr>
+
+										</table>
+
+									</td>
+
+								</tr>
+								<% end %>
+
+							</table>
+
+						</div>
+
+					</div>
+
+				<% end %>
+				
+			</td>
+		</tr>
+		
+	</table>
+	
+	
+	
+</div>

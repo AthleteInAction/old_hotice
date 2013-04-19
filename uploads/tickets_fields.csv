@@ -1,0 +1,16 @@
+state,db_name,display_name,required,active,visible,zendesk
+tickets,old_id,Legacy ID,0,1,1,0
+tickets,external_id,External ID,0,1,1,1
+tickets,type,Type,0,1,1,1
+tickets,subject,Subject,0,1,1,1
+tickets,description,Description,1,1,1,1
+tickets,priority,Priority,0,1,1,1
+tickets,status,Status,0,1,1,1
+tickets,requester_email,Requester Email,1,1,1,1
+tickets,submitter_email,Submitter Email,0,1,1,1
+tickets,assignee_email,Assignee Email,0,1,1,1
+tickets,organization_name,Organization Name,0,1,1,1
+tickets,group_name,Group Name,0,1,1,1
+tickets,due_at,Due At,0,1,1,1
+tickets,tags,Tags,0,1,1,1
+tickets,created_at,Created At,0,1,1,1

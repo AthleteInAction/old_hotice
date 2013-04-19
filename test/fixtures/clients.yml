@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  code: MyString
+  name: MyString
+  username: MyString
+  password: MyString
+  subdomain: MyString
+  user_id: 1
+  active: false
+
+two:
+  code: MyString
+  name: MyString
+  username: MyString
+  password: MyString
+  subdomain: MyString
+  user_id: 1
+  active: false

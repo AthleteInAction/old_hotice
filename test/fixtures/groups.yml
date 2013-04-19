@@ -1,0 +1,23 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  profile_id: 1
+  file_id: 1
+  zendesk_id: 1
+  old_id: MyString
+  name: MyString
+  state: MyString
+  error: false
+  report: MyText
+  code: 1
+
+two:
+  profile_id: 1
+  file_id: 1
+  zendesk_id: 1
+  old_id: MyString
+  name: MyString
+  state: MyString
+  error: false
+  report: MyText
+  code: 1

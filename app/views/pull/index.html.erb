@@ -1,0 +1,80 @@
+<%
+@total = @zendesk.getCall("/api/v2/#{params[:type]}.json")[:body]['count']
+@pulled = GetModel(params[:type]).where("pulled = 1 AND profile_id = #{@profile.id}")
+
+pct = 0
+pct = ((@pulled.count.to_f/@total.to_f)*100).round if @total > 0
+
+%>
+<script>
+// Monitor Status
+////////////////////////////////////////////////////////////
+function monitorStatus(){
+	
+	console.log('Start');
+	
+	$.ajax({
+		
+		url: '/profiles/<%= @profile.id %>/pull/<%= params[:type] %>/status.json',
+		contentType: 'application/json',
+		data: '',
+		success: function(data){
+			console.log(data.pct);
+			$('#status').css('width',data.pct+'%');
+			$('#astat_pulled').html(data.pulled);
+			if (data.pct == 100 || !data.locked){
+				setTimeout('window.location = window.location;',0);
+			} else {
+				setTimeout('monitorStatus();',500);
+			}
+		},
+		complete: function(){
+			
+		}
+		
+	});
+	
+}
+////////////////////////////////////////////////////////////
+</script>
+
+<div style="margin-top:20px;" align="center">
+	
+	<table cellpadding="4" cellspacing="1" border="1">
+		
+		<tr>
+			<th align="center" valign="middle">Pulled</th>
+			<th align="center" valign="middle">Total</th>
+		</tr>
+		
+		<tr>
+			<td align="center" valign="middle" id="astat_pulled"><%= @pulled.count %></td>
+			<td align="center" valign="middle"><%= @total %></td>
+		</tr>
+		
+		<tr>
+			<td colspan="2" align="center" valign="middle">
+				
+				<% if @profile.locked %>
+					
+					<% if @profile.action == "pulling_#{params[:type]}" %>
+						
+						<div id="bar" class="bar" align="left">
+							<div id="status" class="status" style="width:<%= pct %>%;" align="center">&nbsp;</div>
+						</div>
+						<script>monitorStatus();</script>
+						
+					<% end %>
+					
+				<% else %>
+				
+					<%= button_to 'PULL',request.path+'/start',class: 'RLOAD' %>
+					
+				<% end %>
+				
+			</td>
+		</tr>
+		
+	</table>
+	
+</div>

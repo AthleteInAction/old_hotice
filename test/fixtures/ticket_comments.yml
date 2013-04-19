@@ -1,0 +1,27 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  profile_id: 1
+  file_id: 1
+  ticket_id: MyString
+  ticket_comment_id: MyString
+  zendesk_id: 1
+  old_id: 1
+  author_email: MyString
+  author_id: 1
+  value: MyText
+  public: false
+  active: false
+
+two:
+  profile_id: 1
+  file_id: 1
+  ticket_id: MyString
+  ticket_comment_id: MyString
+  zendesk_id: 1
+  old_id: 1
+  author_email: MyString
+  author_id: 1
+  value: MyText
+  public: false
+  active: false

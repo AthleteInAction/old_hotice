@@ -1,0 +1,115 @@
+<div class="title">Import Jobs</div>
+
+<div style="margin-top:50px;" align="center">
+	
+	<table cellpadding="4" cellspacing="1" border="0">
+	  
+		<%
+		inprogress = Profile.where(user_id: current_user.id,status: ['new','opened','running'])
+		incompleted = Profile.where(user_id: current_user.id,status: ['completed'])
+		indeleted = Profile.where(user_id: current_user.id,status: ['deleted'])
+		%>
+		<% if inprogress.count > 0 %>
+			
+			<tr>
+				<th colspan="6" align="left" style="background:#d8e9b1; font-size:18px;">Import Jobs in Progress</th>
+			</tr>
+			
+			<tr>
+			    <th align="left">Name</th>
+			    <th align="left">Source</th>
+			    <th align="left">Destination</th>
+			    <th align="center">Status</th>
+			    <th></th>
+			    <th></th>
+			</tr>
+			
+			<% inprogress.each do |profile| %>
+			<% client = Client.find(profile.destination) %>
+			  <tr>
+			    <td align="left"><%= profile.name %></td>
+			    <td align="left"><%= profile.source %></td>
+			    <td align="left"><%= link_to client.name,"https://#{client.subdomain}.zendesk.com",target: '_blank' %></td>
+			    <td align="center"><%= profile.status.upcase %></td>
+				<%
+				s_link = ''
+				s_link = '/csv' if profile.source == 'CSV'
+				%>
+			    <td><%= link_to 'Select',"/imports/#{profile.id}/select" %></td>
+			    <td><%= link_to 'Destroy',"/imports/#{profile.id}/delete", method: :delete, data: { confirm: 'Are you sure?' } %></td>
+			  </tr>
+			<% end %>
+			
+		<% end %>
+		
+		<% if incompleted.count > 0 %>
+			
+			<tr>
+				<th colspan="6" align="left" style="background:#d8e9b1; font-size:18px;">Completed Jobs</th>
+			</tr>
+			
+			<tr>
+			    <th align="left">Name</th>
+			    <th align="left">Source</th>
+			    <th align="left">Destination</th>
+			    <th align="center">Status</th>
+			    <th></th>
+			    <th></th>
+			</tr>
+			
+			<% incompleted.each do |profile| %>
+			<% client = Client.find(profile.destination) %>
+			  <tr>
+			    <td align="left"><%= profile.name %></td>
+			    <td align="left"><%= profile.source %></td>
+			    <td align="left"><%= link_to client.name,"https://#{client.subdomain}.zendesk.com",target: '_blank' %></td>
+			    <td align="center"><%= profile.status.upcase %></td>
+				<%
+				s_link = ''
+				s_link = '/csv' if profile.source == 'CSV'
+				%>
+			    <td><%= link_to 'Select',"/imports/#{profile.id}/select" %></td>
+			    <td><%= link_to 'Destroy',"/imports/#{profile.id}/delete", method: :delete, data: { confirm: 'Are you sure?' } %></td>
+			  </tr>
+			<% end %>
+			
+		<% end %>
+		
+		<% if indeleted.count > 0 %>
+			
+			<tr>
+				<th colspan="6" align="left" style="background:#d8e9b1; font-size:18px;">Deleted Jobs</th>
+			</tr>
+			
+			<tr>
+			    <th align="left">Name</th>
+			    <th align="left">Source</th>
+			    <th align="left">Destination</th>
+			    <th align="center">Status</th>
+			    <th></th>
+			    <th></th>
+			</tr>
+			
+			<% indeleted.each do |profile| %>
+			<% client = Client.find(profile.destination) %>
+			  <tr>
+			    <td align="left"><%= profile.name %></td>
+			    <td align="left"><%= profile.source %></td>
+			    <td align="left"><%= link_to client.name,"https://#{client.subdomain}.zendesk.com",target: '_blank' %></td>
+			    <td align="center"><%= profile.status.upcase %></td>
+				<%
+				s_link = ''
+				s_link = '/csv' if profile.source == 'CSV'
+				%>
+			    <td><%= link_to 'Select',"/imports/#{profile.id}/select" %></td>
+			    <td><%= link_to 'Destroy',"/imports/#{profile.id}/delete", method: :delete, data: { confirm: 'Are you sure?' } %></td>
+			  </tr>
+			<% end %>
+			
+		<% end %>
+		
+	</table>
+	
+	<div style="margin-top:50px;"><%= link_to 'New Import','/new_import',class: 'button reg' %></div>
+	
+</div>

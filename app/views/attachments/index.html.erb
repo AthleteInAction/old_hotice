@@ -1,0 +1,39 @@
+<h1>Listing attachments</h1>
+
+<table>
+  <tr>
+    <th>Profile</th>
+    <th>State</th>
+    <th>File</th>
+    <th>Open</th>
+    <th>Status</th>
+    <th>Complete</th>
+    <th>Total</th>
+    <th>Active</th>
+    <th>Locked</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @attachments.each do |attachment| %>
+  <tr>
+    <td><%= attachment.profile_id %></td>
+    <td><%= attachment.state %></td>
+    <td><%= attachment.file %></td>
+    <td><%= attachment.open %></td>
+    <td><%= attachment.status %></td>
+    <td><%= attachment.complete %></td>
+    <td><%= attachment.total %></td>
+    <td><%= attachment.active %></td>
+    <td><%= attachment.locked %></td>
+    <td><%= link_to 'Show', attachment %></td>
+    <td><%= link_to 'Edit', edit_attachment_path(attachment) %></td>
+    <td><%= link_to 'Destroy', attachment, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Attachment', new_attachment_path %>

@@ -1,0 +1,45 @@
+<div style="margin-top:50px;">
+	
+	<div class="breadcrumb">
+		<span class=""><%= link_to 'Extraction',"/imports/#{params[:profile_id]}/select" %></span>
+		<span class="non">&nbsp;|&nbsp;</span>
+		<span class="LIT">Mapping</span>
+		<span class="non">&nbsp;|&nbsp;</span>
+		<span class=""><%= link_to 'Import',"/imports/#{params[:profile_id]}/import" %></span>
+	</div>
+	
+	<div style="margin-top:50px;">
+		
+		<% @map.errors.full_messages.each do |e| %>
+			<div class="error"><%= e %></div>
+		<% end %>
+		<%= form_tag request.path.to_s.gsub('/new',''),method: :post do |f| %>
+			
+			<div><%= text_field 'map','name',placeholder: 'Mapping Name' %></div>
+			<div>
+				
+				<%
+				options = [
+					['Select One...',''],
+					['Organizations','oranizations'],
+					['Users','users'],
+					['Groups','groups'],
+					['Tickets','tickets']
+				]
+				selected = @map.data_type
+				%>
+				<div>For: <%= select_tag 'map',options_for_select(options,selected),id: 'map_data_type',name: 'map[data_type]' %></div>
+				
+				<div>
+					
+					<%= submit_tag 'Next' %>
+					
+				</div>
+				
+			</div>
+			
+		<% end %>
+		
+	</div>
+	
+</div>

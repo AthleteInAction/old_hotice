@@ -1,0 +1,23 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  profile_id: 1
+  state: MyString
+  file: MyString
+  open: false
+  status: MyString
+  complete: 1
+  total: 1
+  active: false
+  locked: false
+
+two:
+  profile_id: 1
+  state: MyString
+  file: MyString
+  open: false
+  status: MyString
+  complete: 1
+  total: 1
+  active: false
+  locked: false

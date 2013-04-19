@@ -1,0 +1,303 @@
+<div style="margin-top:50px;">
+	
+	<div class="breadcrumb">
+		<span class=""><%= link_to 'Extraction',"/imports/#{params[:profile_id]}/select" %></span>
+		<span class="non">&nbsp;|&nbsp;</span>
+		<span class="LIT"><%= link_to 'Mapping',"/imports/#{params[:profile_id]}/mapping/#{params[:type]}" %></span>
+		<span class="non">&nbsp;|&nbsp;</span>
+		<span class=""><%= link_to 'Import',"/imports/#{params[:profile_id]}/import/#{params[:type]}" %></span>
+	</div>
+	<div style="margin:20px 0 20px 0;">
+		
+		<% options = [['Organizations','organizations'],['Users','users'],['Groups','groups'],['Tickets','tickets']] %>
+		<% options.each_with_index do |o,i| %>
+			<%
+			clas = ''
+			clas = 'LIT' if o[1] == params[:type]
+			%>
+			<%= (i+1) %>. <%= link_to o[0],"../#{o[1]}/new",class: clas %>&nbsp;&nbsp;
+		<% end %>
+		
+	</div>
+	
+	<div style="margin-top:50px;">
+		
+		<% zd_fields = ZendeskField.where(state: params[:type],zendesk: 1) %>
+		
+		<div class="NONE" id="conditions_template">
+			
+			<table>
+
+				<tr>
+
+					<td>
+						<%
+						options = [['Select a field...','everytime']]
+						zd_fields.each do |zd|
+							options << [zd.display_name,zd.id]
+						end
+						%>
+						<%= select_tag '',options_for_select(options,options[1][1]),name: 'condition[][field_id]',class: 'field_id',onchange: 'evtime(this);' %>
+					</td>
+					<td>
+						<%
+						options = ['is',['is not','is_not'],'contains',['does not contain','no_contain']]
+						%>
+						<%= select_tag '',options_for_select(options),name: 'condition[][condition]',class: 'condition' %>
+					</td>
+					<td>
+						<%= text_field '','',name: 'condition[][field_value]',class: 'field_value',placeholder: 'BLANK' %>
+					</td>
+					<td align="center" valign="middle" width="10">
+						<%= link_to 'REMOVE','',onclick: 'removeCondition(this); return false;',class: 'reomve' %>
+					</td>
+
+				</tr>
+
+			</table>
+			
+		</div>
+		<div class="NONE" id="actions_template">
+			
+			<table>
+
+				<tr>
+
+					<td>
+						<%
+						options = []
+						zd_fields.each do |zd|
+							options << [zd.display_name,zd.id]
+						end
+						%>
+						<%= select_tag '',options_for_select(options),name: 'actions[][field_id]',class: 'field_id' %>
+					</td>
+					<td>
+						<%= select_tag '',options_for_select([['Change to','change'],['Map to','map']]),name: '',onchange: 'changeType(this);' %>
+					</td>
+					<td>
+						<%= text_field '','',name: 'actions[][field_val]',class: 'field_value',placeholder: 'BLANK' %>
+						<%= select_tag '',options_for_select(options),name: 'actions[][field_2_id]',class: 'field_2 NONE' %>
+					</td>
+					<td align="center" valign="middle" width="10">
+						<%= link_to 'REMOVE','',onclick: 'removeAction(this); return false;',class: 'remove' %>
+					</td>
+
+				</tr>
+
+			</table>
+			
+		</div>
+		
+		<div style="width:700px;" align="center">
+		<%= form_tag request.path.gsub('/new',''),method: :post,id: 'conditions_form' do %>
+			
+			<div id="conditions">
+				<% if @map.errors.any? %>
+				    <div id="error_explanation">
+				      <h2><%= pluralize(@map.errors.count, "error") %> prohibited this profile from being saved:</h2>
+
+				      <ul>
+				      <% @map.errors.full_messages.each do |msg| %>
+				        <li><%= msg %></li>
+				      <% end %>
+				      </ul>
+				    </div>
+				<% end %>
+				<table cellpadding="4" cellspacing="1" border="0" id="tcon" width="100%">
+					
+					<tr>
+						<th colspan="4" style="font-size:20px;">Define Condition(s)</th>
+					</tr>
+					
+					<tr>
+						<td colspan="4" align="center">
+							<%= text_field 'map','name',style: 'width:99%; font-size:20px;',placeholder: 'Mapping Name',onkeyup: 'openFields(this);' %>
+							<%= hidden_field 'map','data_type',value: params[:type] %>
+						</td>
+					</tr>
+					
+					<% if 1==2 %>
+					<tr>
+						<td colspan="4" align="center">
+							<%
+							options = [
+								['Select one...','--'],
+								['Organizations','organizations'],
+								['Users','users'],
+								['Groups','Groups'],
+								['Tickets','tickets']
+							]
+							%>
+							<%= select_tag '',options_for_select(options),style: 'width:100%; font-size:20px;',name: 'map[data_type]' %>
+						</td>
+					</tr>
+					<% end %>
+
+					<tr>
+
+						<td colspan="4">
+							<%
+							options = [['Select a field...','everytime']]
+							zd_fields.each do |zd|
+								options << [zd.display_name,zd.id]
+							end
+							%>
+							<%= select_tag '',options_for_select(options),name: 'condition[][field_id]',class: 'field_id',onchange: 'evtime(this);' %>
+						</td>
+						<td class="evtime NONE">
+							<%
+							options = ['is',['is not','is_not'],'contains',['does not contain','no_contain']]
+							%>
+							<%= select_tag '',options_for_select(options),name: 'condition[][condition]',class: 'condition' %>
+						</td>
+						<td class="evtime NONE">
+							<%= text_field '','',name: 'condition[][field_value]',class: 'field_value',placeholder: 'BLANK' %>
+						</td>
+						<td align="center" valign="middle" width="10" class="evtime NONE">
+							<%= link_to 'REMOVE','',onclick: 'removeCondition(this); return false;',id: 'remove_0',class: 'remove' %>
+						</td>
+
+					</tr>
+
+				</table>
+				<div align="right" style="margin:5px 10px 0 0;" id="cadd" class="INVIS"><%= link_to 'ADD','',onclick: 'addCondition(this); return false;',class: 'remove' %></div>
+
+			</div>
+			
+			<div id="actions" class="NONE" style="margin-top:20px;">
+				<table cellpadding="4" cellspacing="1" border="0" id="tact" width="100%">
+					
+					<tr>
+						<th colspan="4" style="font-size:20px;">Define Action(s)</th>
+					</tr>
+					<tr>
+
+						<td width="10">
+							<%
+							options = []
+							zd_fields.each do |zd|
+								options << [zd.display_name,zd.id]
+							end
+							%>
+							<%= select_tag '',options_for_select(options),name: 'actions[][field_id]',class: 'field_id' %>
+						</td>
+						<td width="10">
+							<%= select_tag '',options_for_select([['Change to','change'],['Map to','map']]),name: 'actions[][atype]',onchange: 'changeType(this);' %>
+						</td>
+						<td>
+							<%= text_field '','',name: 'actions[][field_val]',class: 'field_value',placeholder: 'BLANK' %>
+							<%= select_tag '',options_for_select(options),name: 'actions[][field_2_id]',class: 'field_2 NONE' %>
+						</td>
+						<td align="center" valign="middle" width="10">
+							<%= link_to 'REMOVE','',onclick: 'removeAction(this); return false;',class: 'remove' %>
+						</td>
+
+					</tr>
+
+				</table>
+				<div align="right" style="margin:5px 10px 0 0;"><%= link_to 'ADD','',onclick: 'addAction(this); return false;',class: 'remove' %></div>
+				
+				<div><%= submit_tag 'SUBMIT',onclick: "$('#conditions_form').submit(); return false;" %>
+				
+			</div>
+			
+		<% end %>
+			
+		</div>
+		
+	</div>
+	
+</div>
+<script>
+var cond = 1;
+function addCondition(){
+	
+	$('#conditions_template table tr').clone().appendTo('#conditions #tcon');
+	cond++;
+	
+}
+function removeCondition(el){
+	
+	if (cond > 1){
+		$(el).closest('tr').remove();
+		cond--;
+	}
+	
+}
+var act = 1
+function addAction(){
+	
+	$('#actions_template table tr').clone().appendTo('#actions #tact');
+	act++;
+	
+}
+function removeAction(el){
+	
+	if (act > 1){
+		$(el).closest('tr').remove();
+		act--;
+	}
+	
+}
+function evtime(el){
+	
+	if (el.selectedIndex == 0){
+		
+		$('.evtime').hide();
+		$(el).closest('td').attr('colspan',4);
+		$('#cadd').addClass('INVIS');
+		removeEvs();
+		
+	} else {
+		
+		$('.evtime').show();
+		$(el).closest('td').attr('colspan','');
+		$('#cadd').removeClass('INVIS');
+		
+	}
+	
+}
+function removeEvs(){
+	
+	var i = 0;
+	$('#conditions table tr').each(function(){
+		
+		if (i==1){
+			$(this).find('.field_id').prop('selectedIndex',0);
+		}
+		if (i>1){$(this).remove();}
+		i++;
+		
+	});
+	
+}
+function changeType(el){
+	
+	if (el.selectedIndex == 0){
+		
+		$(el).parent().next().find('.field_2').hide();
+		$(el).parent().next().find('.field_value').show();
+		
+	} else {
+		
+		$(el).parent().next().find('.field_2').show();
+		$(el).parent().next().find('.field_value').hide();
+		
+	}
+	
+}
+function openFields(el){
+	
+	if (el.value==''){
+		
+		$('#actions').hide();
+		
+	} else {
+		
+		$('#actions').show();
+		
+	}
+	
+}
+</script>

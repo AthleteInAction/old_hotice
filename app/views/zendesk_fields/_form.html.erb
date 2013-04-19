@@ -1,0 +1,37 @@
+<%= form_for(@zendesk_field) do |f| %>
+  <% if @zendesk_field.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@zendesk_field.errors.count, "error") %> prohibited this zendesk_field from being saved:</h2>
+
+      <ul>
+      <% @zendesk_field.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :state %><br />
+    <%= f.text_field :state %>
+  </div>
+  <div class="field">
+    <%= f.label :db_name %><br />
+    <%= f.text_field :db_name %>
+  </div>
+  <div class="field">
+    <%= f.label :display_name %><br />
+    <%= f.text_field :display_name %>
+  </div>
+  <div class="field">
+    <%= f.label :required %><br />
+    <%= f.check_box :required %>
+  </div>
+  <div class="field">
+    <%= f.label :active %><br />
+    <%= f.check_box :active %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

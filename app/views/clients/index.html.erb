@@ -1,0 +1,28 @@
+<div class="title">Customers</div>
+
+<div style="margin-top:50px;" align="center">
+	
+	<table cellspacing="1" cellpadding="4" border="0">
+
+		<tr>
+		    <th align="left">Name</th>
+		    <th align="left">Subdomain</th>
+		    <th></th>
+		    <th></th>
+		    <th></th>
+		</tr>
+
+	<% @clients.each do |client| %>
+	  <tr>
+	    <td align="left"><%= client.name %></td>
+	    <td align="left"><%= link_to "https://#{client.subdomain}.zendesk.com","https://#{client.subdomain}.zendesk.com",target: '_blank' %></td>
+	    <td><%= link_to 'Show', client %></td>
+	    <td><%= link_to 'Edit', edit_client_path(client) %></td>
+	    <td><%= link_to 'Destroy', client, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+	  </tr>
+	<% end %>
+	</table>
+	
+</div>
+
+<div style="margin-top:50px;"><%= link_to 'New Customer',new_client_path,class: 'button reg' %></div>

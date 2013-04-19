@@ -1,0 +1,30 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>State:</b>
+  <%= @zendesk_field.state %>
+</p>
+
+<p>
+  <b>Db name:</b>
+  <%= @zendesk_field.db_name %>
+</p>
+
+<p>
+  <b>Display name:</b>
+  <%= @zendesk_field.display_name %>
+</p>
+
+<p>
+  <b>Required:</b>
+  <%= @zendesk_field.required %>
+</p>
+
+<p>
+  <b>Active:</b>
+  <%= @zendesk_field.active %>
+</p>
+
+
+<%= link_to 'Edit', edit_zendesk_field_path(@zendesk_field) %> |
+<%= link_to 'Back', zendesk_fields_path %>

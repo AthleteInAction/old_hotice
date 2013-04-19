@@ -1,0 +1,39 @@
+<div class="title">Import Dashboard</div>
+
+<% prof = Profile.where(active: 1,user_id: current_user.id) %>
+<% if prof.count > 0 %>
+<div style="margin-top:50px;">
+	
+	<table cellpadding="4" cellspacing="1" border="0">
+		
+		<tr>
+			<th align="left" valign="middle">Name</th>
+			<th align="center" valign="middle">Customer</th>
+			<th align="center" valign="middle">Status</th>
+			<th align="center" valign="middle">Last Updated</th>
+		</tr>
+		
+		<% prof.each do |p| %>
+		<% client = Client.find(p.destination) %>
+			<tr>
+				<td align="left" valign="middle"><%= link_to p.name,"/imports/#{p.id}/select" %></td>
+				<td align="center" valign="middle"><%= link_to client.name,"https://#{client.subdomain}.zendesk.com",target: '_blank' %></td>
+				<td align="center" valign="middle"><%= p.status.to_s.upcase %></td>
+				<%
+				a = Time.now
+				b = p.updated_at.to_time
+				c = a-b
+				hr = (c.to_f/60/60).floor
+				m = ((c.to_f/60)%60).round
+				#min = (c.to_f/60).floor
+				%>
+				<td align="center" valign="middle"><%= hr %>h <%= m %>m ago</td>
+			</tr>
+		<% end %>
+		
+	</table>
+	
+</div>
+<% end %>
+
+<div style="margin-top:50px;"><%= link_to 'Start New Import','/new_import',class: 'button reg' %></div>

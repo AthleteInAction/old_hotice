@@ -1,0 +1,152 @@
+<div style="margin-top:50px;">
+	
+	<div class="breadcrumb">
+		<span class=""><%= link_to 'Extraction',"/imports/#{params[:profile_id]}/select" %></span>
+		<span class="non">&nbsp;|&nbsp;</span>
+		<span class="LIT">Mapping</span>
+		<span class="non">&nbsp;|&nbsp;</span>
+		<span class=""><%= link_to 'Import',"/imports/#{params[:profile_id]}/import" %></span>
+	</div>
+	
+	<div style="margin-top:50px;">
+		
+		<% zd_fields = ZendeskField.where(state: @map.data_type.to_s,zendesk: 1) %>
+		
+		<div class="NONE" id="conditions_template">
+			
+			<table cellpadding="4" cellspacing="1" border="0">
+
+				<tr>
+
+					<td>
+						<%
+						options = []
+						zd_fields.each do |zd|
+							options << [zd.display_name,zd.id]
+						end
+						%>
+						<%= select_tag '',options_for_select(options),name: 'condition[0][field_id]',class: 'field_id' %>
+					</td>
+					<td>
+						<%
+						options = ['is',['is not','is_not'],'contains',['does not contain','no_contain']]
+						%>
+						<%= select_tag '',options_for_select(options),name: 'condition[0][condition]',class: 'condition' %>
+					</td>
+					<td>
+						<%= text_field '','',name: 'condition[0][field_value]',class: 'field_value' %>
+					</td>
+					<td>
+						<%= link_to 'REMOVE','',onclick: 'removeCondition(this); return false;',class: 'reomve' %>
+					</td>
+
+				</tr>
+
+			</table>
+			
+		</div>
+		
+		<div id="conditions">
+			
+			<%= form_tag request.path+'.json',method: :post,id: 'conditions_form' do %>
+			<table cellpadding="4" cellspacing="1" border="0">
+
+				<tr>
+
+					<td>
+						<%
+						options = []
+						zd_fields.each do |zd|
+							options << [zd.display_name,zd.id]
+						end
+						%>
+						<%= select_tag '',options_for_select(options),name: 'condition[][field_id]',class: 'field_id' %>
+					</td>
+					<td>
+						<%
+						options = ['is',['is not','is_not'],'contains',['does not contain','no_contain']]
+						%>
+						<%= select_tag '',options_for_select(options),name: 'condition[][condition]',class: 'condition' %>
+					</td>
+					<td>
+						<%= text_field '','',name: 'condition[][field_value]',class: 'field_value' %>
+					</td>
+					<td>
+						<%= link_to 'REMOVE','',onclick: 'removeCondition(this); return false;',id: 'remove_0',class: 'remove' %>
+					</td>
+
+				</tr>
+
+			</table>
+			
+			<% end %>
+			
+		</div>
+		
+		<table cellpadding="4" cellspacing="1" border="0">
+
+			<tr>
+
+				<td>
+					<%
+					options = []
+					zd_fields.each do |zd|
+						options << [zd.display_name,zd.id]
+					end
+					%>
+					<%= select_tag '',options_for_select(options),class: 'INVIS' %>
+				</td>
+				<td>
+					<%
+					options = ['is',['is not','is_not'],'contains',['does not contain','no_contain']]
+					%>
+					<%= select_tag '',options_for_select(options),class: 'INVIS' %>
+				</td>
+				<td>
+					<%= text_field '','',name: 'condition[0][field_value]',class: 'INVIS' %>
+				</td>
+				<td>
+					<%= link_to 'ADD','',onclick: 'addCondition(); return false;' %>
+				</td>
+
+			</tr>
+
+		</table>
+		
+		<div><%= submit_tag 'SUBMIT',onclick: "$('#conditions_form').submit(); return false;" %>
+		
+	</div>
+	
+</div>
+<script>
+var cond = 1;
+function addCondition(){
+	
+	$('#conditions_template table').clone().appendTo('#conditions form');
+	cond++;
+	renameConditions();
+	
+}
+function removeCondition(el){
+	
+	if (cond > 0){
+		$(el).closest('table').remove();
+		cond--;
+	}
+	renameConditions();
+	
+}
+function renameConditions(){
+	
+	var i = 0;
+	$('#conditions table').each(function(){
+		
+		$(this).find('.field_id').attr('name','condition[][field_id]');
+		$(this).find('.condition').attr('name','condition[][condition]');
+		$(this).find('.field_value').attr('name','condition[][field_value]');
+		i++;
+		
+	});
+	
+}
+</script>

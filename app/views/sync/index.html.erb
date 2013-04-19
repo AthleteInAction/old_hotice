@@ -1,0 +1,206 @@
+<%
+threads = []
+threads << Thread.new do
+	@zd_orgs = @zendesk.getCall("/api/v2/organizations.json")[:body]['count']
+	@in_orgs = Organizations.where("pulled = 1 AND profile_id = #{@profile.id}").count
+	@orgs_pct = 0
+	@orgs_pct = ((@in_orgs.to_f/@zd_orgs.to_f)*100).floor if @zd_orgs > 0
+end
+threads << Thread.new do
+	@zd_users = @zendesk.getCall("/api/v2/users.json")[:body]['count']
+	@in_users = ZdUsers.where("pulled = 1 AND profile_id = #{@profile.id}").count
+	@users_pct = 0
+	@users_pct = ((@in_users.to_f/@zd_users.to_f)*100).floor if @zd_users > 0
+end
+threads << Thread.new do
+	@zd_groups = @zendesk.getCall("/api/v2/groups.json")[:body]['count']
+	@in_groups = Groups.where("pulled = 1 AND profile_id = #{@profile.id}").count
+	@groups_pct = 0
+	@groups_pct = ((@in_groups.to_f/@zd_groups.to_f)*100).floor if @zd_groups > 0
+end
+threads.each do |t|
+	t.join
+end
+off = false
+off = true if @profile.locked
+%>
+<script>
+// Monitor Status
+////////////////////////////////////////////////////////////
+var prev = '';
+var c = 1;
+function monitorStatus(){
+	
+	$.ajax({
+		
+		url: '/imports/<%= @profile.id %>/sync/status.json',
+		contentType: 'application/json',
+		data: '',
+		success: function(data){
+			console.log(data);
+			$('#status_organizations').css('width',data.organizations.pct+'%')
+			$('#status_users').css('width',data.users.pct+'%')
+			$('#status_groups').css('width',data.groups.pct+'%')
+			if (data.action && prev !== data.action.toLowerCase()){
+				prev = data.action.toLowerCase();
+				c++;
+				$('#td_message div').append('<div>'+c+'. '+data.action+'...</div>').scrollTop(10000000000);
+			}
+			
+			$('#in_orgs').html(data.organizations.pulled);
+			$('#in_users').html(data.users.pulled);
+			$('#in_groups').html(data.groups.pulled);
+			//$('#astat_'+id+'_success').html(data.success);
+			//$('#astat_'+id+'_error').html(data.errors);
+			if (data.organizations.pct == 100 && data.users.pct == 100 && data.groups.pct == 100 || !data.locked){
+				//$('#bar_'+id).remove();
+				//$('#complete_'+id).show();
+				setTimeout('window.location = window.location;',100);
+			} else {
+				setTimeout('monitorStatus();',1000);
+			}
+		},
+		complete: function(){
+			
+		}
+		
+	});
+	
+}
+////////////////////////////////////////////////////////////
+</script>
+
+<div style="margin-top:50px;">
+	
+	
+	<div class="breadcrumb">
+		<% if @profile.synced %>
+			<span class="LIT">Sync to Zendesk</span>
+			<span class="non">&nbsp;>&nbsp;</span>
+		<% else %>
+			<span class="">1. Import Setup</span>
+			<span class="non">&nbsp;>&nbsp;</span>
+			<span class="LIT">2. Sync with Zendesk</span>
+			<span class="non">&nbsp;>&nbsp;</span>
+		<% end %>
+		<span class="">Extraction</span>
+		<span class="non">&nbsp;|&nbsp;</span>
+		<span class="">Mapping</span>
+		<span class="non">&nbsp;|&nbsp;</span>
+		<span class="">Import</span>
+	</div>
+	
+	<table cellpadding="4" cellspacing="1" border="0" style="margin-top:40px;" width="300">
+		
+		<tr>
+			<th align="left" valign="middle" height="">Resource</th>
+			<th align="center" valign="middle">Sync</th>
+		</tr>
+		<% if @profile.locked %>
+		<tr>
+			<td align="center" valign="middle" style="padding:2px;" id="td_message">
+				<div id="message_box" align="left" style="height:50px; font-size:10px; overflow-x:scroll;">
+					<% if @profile.action %>
+						1. <%= @profile.action %>...
+					<% end %>
+				</div>
+			</td>
+			<td valign="middle" align="center"><%= image_tag 'loader.gif' %></td>
+		</tr>
+		<% end %>
+		
+		<tr>
+			<td align="left" valign="middle">Organizations (<span id="in_orgs"><%= @in_orgs %></span>/<%= @zd_orgs %>)</td>
+			<td align="center" valign="middle">
+				
+				<%= form_for @profile,html: {class: 'BSUB',caction: "/profiles/#{@profile.id}.json",cmethod: "PUT"} do |f| %>
+					
+					<%= f.check_box :organizations,onclick: "$(this).closest('form').submit();",off: off %>
+					
+				<% end %>
+				
+			</td>
+		</tr>
+		<% if @profile.locked %>
+		<tr>
+			<td colspan="2" align="left" valign="middle" style="padding:0px;">
+				<div id="bar_organizations" class="bar" align="left">
+					<div id="status_organizations" class="status" style="width:<%= @orgs_pct %>%;" align="center">&nbsp;</div>
+				</div>
+			</td>
+		</tr>
+		<% end %>
+		
+		<tr>
+			<td align="left" valign="middle">Users (<span id="in_users"><%= @in_users %></span>/<%= @zd_users %>)</td>
+			<td align="center" valign="middle">
+				
+				<%= form_for @profile,html: {class: 'BSUB',caction: "/profiles/#{@profile.id}.json",cmethod: "PUT"} do |f| %>
+					
+					<%= f.check_box :users,onclick: "$(this).closest('form').submit();",off: off %>
+					
+				<% end %>
+				
+			</td>
+		</tr>
+		<% if @profile.locked %>
+		<tr>
+			<td colspan="2" align="left" valign="middle" style="padding:0px;">
+				<div id="bar_users" class="bar" align="left">
+					<div id="status_users" class="status" style="width:<%= @users_pct %>%;" align="center">&nbsp;</div>
+				</div>
+			</td>
+		</tr>
+		<% end %>
+		
+		<tr>
+			<td align="left" valign="middle">Groups (<span id="in_groups"><%= @in_groups %></span>/<%= @zd_groups %>)</td>
+			<td align="center" valign="middle">
+				
+				<%= form_for @profile,html: {class: 'BSUB',caction: "/profiles/#{@profile.id}.json",cmethod: "PUT"} do |f| %>
+					
+					<%= f.check_box :groups,onclick: "$(this).closest('form').submit();",off: off %>
+					
+				<% end %>
+				
+			</td>
+		</tr>
+		<% if @profile.locked %>
+		<tr>
+			<td colspan="2" align="left" valign="middle" style="padding:0px;">
+				<div id="bar_groups" class="bar" align="left">
+					<div id="status_groups" class="status" style="width:<%= @groups_pct %>%;" align="center">&nbsp;</div>
+				</div>
+			</td>
+		</tr>
+		<% end %>
+		
+		<tr>
+			<td colspan="2" align="center" valign="middle">
+				
+				<% if @profile.locked %>
+					<script>monitorStatus();</script>
+					<%= button_to 'CANCEL',request.path.to_s+'/cancel.json',method: :get,class: 'RLOAD',onclick: "$('#continue').hide();" %>
+				<% else %>
+					<%= button_to 'START',request.path.to_s+'/start.json',method: :get,class: 'RLOAD',onclick: "$('#continue').hide();" %>
+				<% end%>
+				
+			</td>
+		</tr>
+		
+	</table>
+	
+	<%
+	if @profile.synced
+		txt = "Continue"
+		lnk = 'select'
+	else
+		txt = 'Skip to Next Step'
+		lnk = 'skip'
+	end
+	if !@profile.locked
+	%>
+	<div style="margin-top:20px;" id="continue"><%= link_to txt,"/imports/#{params[:profile_id]}/#{lnk}",method: :get,class: 'button reg' %></div>
+	<% end %>
+	
+</div>

@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  state: MyString
+  db_name: MyString
+  display_name: MyString
+  required: false
+  active: false
+
+two:
+  state: MyString
+  db_name: MyString
+  display_name: MyString
+  required: false
+  active: false

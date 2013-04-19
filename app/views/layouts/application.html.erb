@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Migrationrocket</title>
+  <%= stylesheet_link_tag    "application", :media => "all" %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+	
+	<table cellpadding="0" cellspacing="0" border="0" width="100%" height="100%" style="background:#FFF;">
+		<tr style="background:#FFF;">
+			<% if current_user %>
+			<td align="center" valign="top" width="76" style="background:#26272b">
+				
+				<div class="SIDE_BTN"><%= link_to image_tag('home_v1.png',class: 'HOVER',over: '/assets/home_v1_over.png',up: '/assets/home_v1.png'),'/' %></div>
+				<div class="SIDE_BTN"><%= link_to image_tag('clients_v1.png',class: 'HOVER',over: '/assets/clients_v1_over.png',up: '/assets/clients_v1.png'),'/clients' %></div>
+				<div class="SIDE_BTN"><%= link_to image_tag('imports_v1.png',class: 'HOVER',over: '/assets/imports_v1_over.png',up: '/assets/imports_v1.png'),'/imports' %></div>
+				<% if params[:profile_id] %>
+					<div class="SIDE_BTN"><%= link_to image_tag('sync_v1.png',class: 'HOVER',over: '/assets/sync_v1_over.png',up: '/assets/sync_v1.png'),"/imports/#{params[:profile_id]}/sync" %></div>
+				<% end %>
+				<div class="SIDE_BTN COG"><%= link_to image_tag('cog_up_v1.png',class: 'HOVER',over: '/assets/cog_over_v1.png',up: '/assets/cog_up_v1.png'),"/users/#{current_user.id}/edit" %></div>
+				
+			</td>
+			<% end %>
+			<td align="center" valign="top">
+				
+				<% flash.each do |name,msg| %>
+					<%= content_tag :div,raw(msg),id: "flash_#{name}",class: 'flash_message' %>
+					<script>
+					$(function(){
+						$('#flash_<%= name.to_s %>').slideDown(200).delay(3000).slideUp(200);
+					});
+					</script>
+				<% end %>
+
+				<% if current_user %>
+					
+					<div id="log"><%= link_to 'Logout',logout_path %></div>
+
+				<% end %>
+				
+				<% if params[:profile_id] %>
+					
+					<%
+					@p = Profile.find(params[:profile_id])
+					@c = Client.find(@p.destination)
+					ext = ''
+					if params[:type]
+						
+						ext = "/#{params[:type]}"
+						
+					end
+					%>
+					<table cellpadding="0" cellspacing="0" border="0" class="WHERE">
+						<tr>
+							<td align="center">
+								<%= link_to "https://#{@c.subdomain}.zendesk.com#{ext}",target: '_blank' do %>
+									<%= @c.name %><br>
+									(https://<%= @c.subdomain %>.zendesk.com)<br>
+									as<br><%= @c.username %>
+								<% end %>
+							</td>
+						</tr>
+					</table>
+					
+				<% end %>
+				
+				<div id="container"><%= yield %></div>
+							
+			</td>
+		</tr>
+	</table>
+	
+</body>
+</html>

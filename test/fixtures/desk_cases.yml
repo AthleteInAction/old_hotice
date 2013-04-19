@@ -1,0 +1,31 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  zendesk_id: 1
+  desk_id: 1
+  priority: 1
+  subject: MyString
+  group_id: 1
+  group_name: MyString
+  user_id: 1
+  user_name: MyString
+  description: MyText
+  customer_id: 1
+  case_status_type: MyString
+  labels: MyText
+  import_status: MyString
+
+two:
+  zendesk_id: 1
+  desk_id: 1
+  priority: 1
+  subject: MyString
+  group_id: 1
+  group_name: MyString
+  user_id: 1
+  user_name: MyString
+  description: MyText
+  customer_id: 1
+  case_status_type: MyString
+  labels: MyText
+  import_status: MyString

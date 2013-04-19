@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  user_id: 1
+  name: MyString
+  description: MyText
+  source: MyString
+  destination: MyString
+  status: MyString
+  active: false
+
+two:
+  user_id: 1
+  name: MyString
+  description: MyText
+  source: MyString
+  destination: MyString
+  status: MyString
+  active: false

@@ -1,0 +1,57 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  profile_id: 1
+  file_id: 1
+  zendesk_id: 1
+  old_id: MyString
+  external_id: MyString
+  type: 
+  subject: MyString
+  description: MyText
+  priority: MyString
+  status: MyString
+  requester_email: MyString
+  requester_id: 1
+  submitter_email: MyString
+  submitter_id: 1
+  assignee_email: MyString
+  assignee_id: 1
+  organization_name: MyString
+  organization_id: 1
+  group_name: MyString
+  group_id: 1
+  due_at: 2013-01-08
+  tags: MyText
+  state: MyString
+  error: false
+  report: MyText
+  code: 1
+
+two:
+  profile_id: 1
+  file_id: 1
+  zendesk_id: 1
+  old_id: MyString
+  external_id: MyString
+  type: 
+  subject: MyString
+  description: MyText
+  priority: MyString
+  status: MyString
+  requester_email: MyString
+  requester_id: 1
+  submitter_email: MyString
+  submitter_id: 1
+  assignee_email: MyString
+  assignee_id: 1
+  organization_name: MyString
+  organization_id: 1
+  group_name: MyString
+  group_id: 1
+  due_at: 2013-01-08
+  tags: MyText
+  state: MyString
+  error: false
+  report: MyText
+  code: 1

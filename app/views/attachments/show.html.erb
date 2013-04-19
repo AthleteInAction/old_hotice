@@ -1,0 +1,50 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Profile:</b>
+  <%= @attachment.profile_id %>
+</p>
+
+<p>
+  <b>State:</b>
+  <%= @attachment.state %>
+</p>
+
+<p>
+  <b>File:</b>
+  <%= @attachment.file %>
+</p>
+
+<p>
+  <b>Open:</b>
+  <%= @attachment.open %>
+</p>
+
+<p>
+  <b>Status:</b>
+  <%= @attachment.status %>
+</p>
+
+<p>
+  <b>Complete:</b>
+  <%= @attachment.complete %>
+</p>
+
+<p>
+  <b>Total:</b>
+  <%= @attachment.total %>
+</p>
+
+<p>
+  <b>Active:</b>
+  <%= @attachment.active %>
+</p>
+
+<p>
+  <b>Locked:</b>
+  <%= @attachment.locked %>
+</p>
+
+
+<%= link_to 'Edit', edit_attachment_path(@attachment) %> |
+<%= link_to 'Back', attachments_path %>

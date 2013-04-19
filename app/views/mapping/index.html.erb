@@ -1,0 +1,96 @@
+<div style="margin-top:50px;">
+	
+	<div class="breadcrumb">
+		<span class=""><%= link_to 'Extraction',"/imports/#{params[:profile_id]}/select" %></span>
+		<span class="non">&nbsp;|&nbsp;</span>
+		<span class="LIT"><%= link_to 'Mapping',"/imports/#{params[:profile_id]}/mapping/#{params[:type]}" %></span>
+		<span class="non">&nbsp;|&nbsp;</span>
+		<span class=""><%= link_to 'Import',"/imports/#{params[:profile_id]}/import/#{params[:type]}" %></span>
+	</div>
+	
+	<div style="margin-top:50px;">
+		
+		<%= link_to 'Add New Mapping',"#{request.path}/new",class: 'button reg' %>
+		<% dmaps = Maps.where(profile_id: params[:profile_id],active: 1) %>
+		<% if dmaps.count > 0 %>
+		<table cellpadding="4" cellspacing="1" border="0" style="margin-top:50px;">
+			
+			<tr>
+				
+				<th align="" valign="middle" width="10">Type</th>
+				<th align="" valign="middle" style="padding-right:30px;">Name</th>
+				<th align="" valign="middle" width="10"></th>
+				<th align="" valign="middle" width="10"></th>
+				
+			</tr>
+			
+			<% dmaps.each do |m| %>
+			<tr>
+				
+				<td align="" valign="middle"><%= m.data_type.to_s.capitalize %></td>
+				<td align="" valign="middle" style="padding-right:30px;"><%= m.name %></td>
+				<td align="" valign="middle">
+					<%
+					if m.active
+						txt = 'deactivate'
+					else
+						txt = 'activate'
+					end
+					%>
+					<%= link_to txt.capitalize,"/imports/#{params[:profile_id]}/mapping/#{params[:type]}/#{m.id}/#{txt}" %>
+				</td>
+				<td align="" valign="middle">
+					
+					<%= link_to 'Delete',"/imports/#{params[:profile_id]}/mapping/#{params[:type]}/#{m.id}",method: :delete,confirm: "Are you sure?" %>
+					
+				</td>
+				
+			</tr>
+			<% end %>
+			
+		</table>
+		<% end %>
+		
+		<% dmaps = Maps.where(profile_id: params[:profile_id],active: 0) %>
+		<% if dmaps.count > 0 %>
+		<table cellpadding="4" cellspacing="1" border="0" style="margin-top:50px;">
+			
+			<tr>
+				
+				<th align="" valign="middle" width="10">Type</th>
+				<th align="" valign="middle" style="padding-right:30px;">Name</th>
+				<th align="" valign="middle" width="10"></th>
+				<th align="" valign="middle" width="10"></th>
+				
+			</tr>
+			
+			<% dmaps.each do |m| %>
+			<tr>
+				
+				<td align="" valign="middle"><%= m.data_type.to_s.capitalize %></td>
+				<td align="" valign="middle" style="padding-right:30px;"><%= m.name %></td>
+				<td align="" valign="middle">
+					<%
+					if m.active
+						txt = 'deactivate'
+					else
+						txt = 'activate'
+					end
+					%>
+					<%= link_to txt.capitalize,"/imports/#{params[:profile_id]}/mapping/#{params[:type]}/#{m.id}/#{txt}" %>
+				</td>
+				<td align="" valign="middle">
+					
+					<%= link_to 'Delete',"/imports/#{params[:profile_id]}/mapping/#{params[:type]}/#{m.id}",method: :delete,confirm: "Are you sure?" %>
+					
+				</td>
+				
+			</tr>
+			<% end %>
+			
+		</table>
+		<% end %>
+		
+	</div>
+	
+</div>

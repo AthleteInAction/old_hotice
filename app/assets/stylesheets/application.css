@@ -1,0 +1,226 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the top of the
+ * compiled file, but it's generally better to create a new file per style scope.
+ *
+ *= require_self
+ *= require_tree .
+ */
+body,html {
+	width:100%;
+	height:100%;
+	margin:0px;
+	padding:0px;
+	font-size:13px;
+	font-family: verdana, arial, helvetica, sans-serif;
+	color:#272727;
+}
+
+input {
+	padding:3px;
+	font-size:18px;
+	font-family: verdana, arial, helvetica, sans-serif;
+	color:#272727;
+	-webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+	-moz-box-sizing: border-box;    /* Firefox, other Gecko */
+	box-sizing: border-box;
+}
+
+a:link {
+	color:#2e4812;
+	text-decoration:underline;
+}
+a:hover {
+	color:#2e4812;
+	text-decoration:underline;
+}
+a:visited {
+	color:#2e4812;
+	text-decoration:none;
+}
+a:active {
+	color:#2e4812;
+	text-decoration:none;
+}
+
+
+.NONE {
+	display:none;
+}
+.LEFT {
+	float:left;
+}
+.RIGHT {
+	float:right;
+}
+.CLEAR {
+	clear:both;
+}
+#log {
+	position:absolute;
+	z-index:1000001;
+	top:5px;
+	right:10px;
+}
+
+
+.bar {
+	height:15px;
+}
+.status {
+	width:0%;
+	height:15px;
+	background:#272727;
+}
+.complete {
+	font-size:11px;
+	font-weight:bold;
+	padding:2px;
+	border:solid 1px #CCC;
+	color:#272727;
+	width:150px;
+}
+.ATTACHMENT {
+	margin-top:10px;
+	margin-bottom:10px;
+}
+.flash_message {
+	position:absolute;
+	right:100px;
+	z-index:20000001;
+	border:solid 1px #272727;
+	border-radius:0px 0px 4px 4px;
+	border-top:none;
+	padding:7px;
+	background:#545454;
+	color:#ff7e00;
+}
+.WHERE {
+	border:solid 1px #272727;
+	border-radius:0px 0px 4px 4px;
+	border-top:none;
+	padding:7px;
+	background:#545454;
+	color:#ff7e00;
+}
+table.WHERE tr {
+	background:none;
+}
+table.WHERE tr td a {
+	color:#ff7e00;
+}
+#sidebar {
+	position:absolute;
+	z-index:10000001;
+	height:100%;
+	background:#ccc;
+	padding:4px;
+}
+.SIDE_BTN {
+	margin-top:12px;
+}
+#container {
+	/*margin:20px 0 0 250px;*/
+}
+.BIG {
+	font-size:25px;
+}
+.non {
+	color:#CCC;
+}
+.LIT {
+	color:#2e4812;
+	font-weight:bold;
+}
+
+.B7 {
+	margin-top:7px;
+}
+.B4 {
+	margin-top:4px;
+}
+.INVIS {
+	visibility:hidden;
+}
+table {
+	background:#CCC;
+	border-radius:4px;
+}
+table tr th {
+	background:#c3ff00;
+	color:#26272b;
+}
+tr:nth-child(even) {background: #edffb1}
+tr:nth-child(odd) {background: #dcff6d}
+.MRLOGO {
+	background:#4c4c4c;
+	margin-top:20px;
+	border-radius:5px;
+	border:solid 1px #CCC;
+	width:350px;
+	padding:10px;
+}
+.WHERE {
+	border-radius:0px 0px 3px 3px;
+	/*border:solid 1px #CCC;*/
+}
+
+.button {
+    padding: 5px 10px;
+    display: inline;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+    font-weight: bold;
+    border-radius: 5px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+}
+.button:link {
+	font-size:13px;
+	font-family: verdana, arial, helvetica, sans-serif;
+	color:#272727;
+	text-decoration:none;
+}
+.button:hover {
+    background-position: 0 -48px;
+	font-size:13px;
+	font-family: verdana, arial, helvetica, sans-serif;
+	color:#272727;
+}
+.button:active {
+    background-position: 0 top;
+    position: relative;
+    top: 1px;
+    padding: 6px 10px 4px;
+}
+.button.reg:hover {
+	background:#070707;
+	border:solid 1px #CCC;
+	color:#a6d900;
+	font-size:20px;
+}
+.button.reg {
+	background:#26272b;
+	border:solid 1px #CCC;
+	color:#c3ff00;
+	font-size:20px;
+}
+.title {
+	font-size:30px;
+	margin-top:50px;
+	background:#;
+	font-weight:bold;
+	color:#26272b;
+	text-transform:uppercase;
+}
+.COG {
+	position:absolute;
+	left:15px;
+	bottom:15px;
+}

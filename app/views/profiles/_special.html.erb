@@ -1,0 +1,143 @@
+<div style="margin-top:50px;">
+<%= form_for(@profile,html: {id: 'inew_form'}) do |f| %>
+	
+	<% if @profile.errors.any? %>
+    <div id="error_explanation">
+		<h2><%= pluralize(@profile.errors.count, "error") %> prohibited this client from being saved:</h2>
+		<ul>
+			<% @profile.errors.full_messages.each do |msg| %>
+			<li><%= msg %></li>
+			<% end %>
+		</ul>
+	</div>
+	<% end %>
+	
+	<table cellpadding="10" cellspacing="1" border="0">
+		
+		<tr>
+			<th align="center" valign="middle" style="font-size:20px; padding:4px;">JOB NAME</th>
+		</tr>
+		
+		<tr>
+			<td align="center" valign="top">
+				
+				<div class="field">
+					<%= f.text_field :name,name: 'profile[name]',id: 'profile_name',placeholder: 'Import Job Name',class: 'B7',onkeyup: 'openFields(this,3);',autocomplete: 'off' %>
+					<%= f.hidden_field :source,value: 'CSV' %>
+					<%= f.hidden_field :destination,value: 'create' %>
+				</div>
+				
+			</td>
+		</tr>
+		
+		<tr class="NONE"><th align="center" style="font-size:20px; padding:4px;">SOURCE</th></tr>
+		
+		<tr class="NONE" id="open_source">
+			
+			<td align="left" valign="top">
+				
+				<% options = [['Zendesk',''],['CSV','CSV']] %>
+				<%= select_tag '',options_for_select(options),class: '',onchange: "if (this.selectedIndex==0){$('.SFIELDS').show();} else {$('.SFIELDS').hide();}" %>
+				
+				<div id="source_fields" class="SFIELDS NON B7">
+					
+					<div class="field B7">
+						<%= f.text_field :name,placeholder: 'Enter New Customer Name',name: 'bad[name]',id: 'bad' %>
+					</div>
+
+					<div class="field B7">
+						<%= f.text_field :name,placeholder: 'Zendesk Subdomain',name: 'bad[subdomain]',id: 'bad' %>
+					</div>
+					<div class="field B7">
+						<%= f.text_field :name,placeholder: 'Zendesk Username',name: 'bad[username]',id: 'bad' %>
+					</div>
+					<div class="field B7">
+						<%= f.password_field :name,placeholder: 'Zendesk Password',name: 'bad[password]',id: 'bad' %>
+					</div>
+					<div class="field B7">
+						<input type="button" value="Test Connection" onclick="return false;" class="ZENDESK" />
+					</div>
+
+				</div>
+				
+			</td>
+			
+		</tr>
+		
+		<tr class="NONE"><th align="center" style="font-size:20px; padding:4px;">TARGET</th></tr>
+		
+		<tr class="NONE" id="open_fields">
+
+			<td align="left" valign="top">
+				
+				<div id="other_fields" class="OFIELDS NON">
+					
+					<div class="field">
+						<%= f.text_field :name,placeholder: 'Enter New Customer Name',name: 'client[name]',id: 'client_name' %>
+					</div>
+
+					<div class="field B7">
+						<%= f.text_field :name,placeholder: 'Zendesk Subdomain',name: 'client[subdomain]',id: 'client_subdomain' %>
+					</div>
+					<div class="field B7">
+						<%= f.text_field :name,placeholder: 'Zendesk Username',name: 'client[username]',id: 'client_username' %>
+					</div>
+					<div class="field B7">
+						<%= f.password_field :name,placeholder: 'Zendesk Password',name: 'client[password]',id: 'client_password' %>
+					</div>
+					<div class="field B7">
+						<input type="button" value="Test Connection" onclick="return false;" class="ZENDESK" />
+					</div>
+
+					<%= f.hidden_field :name,value: current_user.id,name: 'client[user_id]',id: 'client_user_id' %>
+
+				</div>
+				
+			</td>
+
+		</tr>
+		
+	</table>
+	
+	<div style="margin-top:15px;" class="NONE" id="fsubmit"><%= link_to 'NEXT','',class: 'button reg',onclick: "$('#inew_form').submit(); return false;" %></div>
+	
+<% end %>
+</div>
+<script>
+function openFields(el,step){
+	
+	if (el.value == ''){
+		
+		var i = 0;
+		$(el).closest('table').find('tr').each(function(){
+			
+			console.log('less');
+			if (i>(step-2)){
+				
+				$(this).hide();
+				$('#fsubmit').hide();
+				
+			}
+			i++;
+			
+		});
+		
+	} else {
+		
+		var i = 0;
+		$(el).closest('table').find('tr').each(function(){
+			
+			if (i<=100){
+				
+				$(this).show();
+				$('#fsubmit').show();
+				
+			}
+			i++;
+			
+		});
+		
+	}
+	
+}
+</script>

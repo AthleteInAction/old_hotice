@@ -1,0 +1,30 @@
+<div class="MRLOGO"><%= image_tag 'mr_v1.png',height: '70' %></div>
+
+<div style="margin-top:50px;" align="center">
+	
+	<table cellpadding="4" cellspacing="1" border="0">
+		
+		<tr>
+			<th align="center" valign="middle">Log In</th>
+		</tr>
+		<tr>
+			<td align="" valign="middle">
+				
+				<%= form_tag sessions_path do %>
+				  <div class="field B7">
+				          <%= label_tag :email %><br />
+				          <%= text_field_tag :email, params[:email],style: 'width:200px;' %>
+				  </div>
+				  <div class="field B7">
+				          <%= label_tag :password %><br />
+				          <%= password_field_tag :password,'',style: 'width:200px;' %>
+				  </div>
+				  <div class="actions B7"><%= submit_tag "Log In" %>
+				<% end %>
+				
+			</td>
+		</tr>
+		
+	</table>	
+	
+</div>

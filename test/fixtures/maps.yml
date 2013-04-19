@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  profile_id: 1
+  m_type: MyString
+  data_type: MyString
+  field_1: 1
+  val_1: MyString
+  field_2: 1
+  val_2: MyString
+
+two:
+  profile_id: 1
+  m_type: MyString
+  data_type: MyString
+  field_1: 1
+  val_1: MyString
+  field_2: 1
+  val_2: MyString

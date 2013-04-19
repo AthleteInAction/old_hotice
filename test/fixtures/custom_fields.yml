@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  profile_id: 1
+  custom_field_id: 1
+  display_name: MyString
+  required: false
+  field_type: MyString
+  field_options: MyText
+
+two:
+  profile_id: 1
+  custom_field_id: 1
+  display_name: MyString
+  required: false
+  field_type: MyString
+  field_options: MyText

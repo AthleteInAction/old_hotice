@@ -1,0 +1,34 @@
+<%= form_for(@client) do |f| %>
+  <% if @client.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@client.errors.count, "error") %> prohibited this client from being saved:</h2>
+
+      <ul>
+      <% @client.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field B7">
+    <%= f.text_field :name,placeholder: 'Customer Name' %>
+  </div>
+  <div class="field B7">
+    <%= f.text_field :subdomain,placeholder: 'Zendesk Subdomain' %>
+  </div>
+  <div class="field B7">
+    <%= f.text_field :username,placeholder: 'Zendesk Username' %>
+  </div>
+  <div class="field B7">
+    <%= f.password_field :password,placeholder: 'Zendesk Password' %>
+  </div>
+  <div class="field">
+	<input type="button" value="Test Connection" onclick="return false;" class="ZENDESK" />
+  </div>
+
+  <%= f.hidden_field :user_id,value: current_user.id %>
+  <div class="actions B7">
+    <%= f.submit 'UPDATE' %>
+  </div>
+<% end %>

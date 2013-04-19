@@ -1,0 +1,181 @@
+<script>
+// Monitor Status
+////////////////////////////////////////////////////////////
+function monitorStatus(){
+	
+	console.log('Start');
+	
+	$.ajax({
+		
+		url: '/imports/<%= @profile.id %>/import/<%= params[:type] %>/status.json',
+		contentType: 'application/json',
+		data: '',
+		success: function(data){
+			console.log(data.pct);
+			$('#status').css('width',data.pct+'%');
+			$('#astat_success').html(data.success);
+			$('#astat_errors').html(data.errors);
+			$('#astat_pending').html(data.pending);
+			$('#astat_completed').html(data.completed);
+			$('#astat_total').html(data.total);
+			if (data.pct == 100){
+				setTimeout('window.location = window.location;',2000);
+			} else {
+				setTimeout('monitorStatus();',1000);
+			}
+		},
+		complete: function(){
+			
+		}
+		
+	});
+	
+}
+////////////////////////////////////////////////////////////
+</script>
+
+
+<div style="margin-top:50px;" align="center">
+	
+	<div class="breadcrumb">
+		<span class=""><%= link_to 'Extraction',"/imports/#{params[:profile_id]}/csv/#{params[:type]}" %></span>
+		<span class="non">&nbsp;|&nbsp;</span>
+		<span class=""><%= link_to 'Mapping',"/imports/#{params[:profile_id]}/mapping/#{params[:type]}" %></span>
+		<span class="non">&nbsp;|&nbsp;</span>
+		<span class="LIT">Import</span>
+	</div>
+	<div style="margin:20px 0 20px 0;">
+		
+		<% options = [['Organizations','organizations'],['Users','users'],['Groups','groups'],['Tickets','tickets']] %>
+		<% options.each_with_index do |o,i| %>
+			<%
+			clas = ''
+			clas = 'LIT' if o[1] == params[:type]
+			%>
+			<%= (i+1) %>. <%= link_to o[0],o[1],class: clas %>&nbsp;&nbsp;
+		<% end %>
+		
+	</div>
+	
+	<table cellpadding="4" cellspacing="1" border="0">
+		
+		<tr>
+			
+			<th align="center" valign="middle">
+				
+				Pending
+				
+			</th>
+			<th align="center" valign="middle">
+				
+				Errors
+				
+			</th>
+			<th align="center" valign="middle">
+				
+				Success
+				
+			</th>
+			<th align="center" valign="middle">
+				
+				Completed
+				
+			</th>
+			<th align="center" valign="middle">
+				
+				Total
+				
+			</th>
+			
+		</tr>
+		
+		<tr>
+			
+			<td align="center" valign="middle" id="astat_pending">
+				
+				<% pending = GetModel(params[:type]).where("profile_id = #{params[:profile_id]} AND error = 0 AND state = 'pending'").count %>
+				<%= pending %>
+				
+			</td>
+			<td align="center" valign="middle" id="astat_errors">
+				
+				<% errors = GetModel(params[:type]).where("profile_id = #{params[:profile_id]} AND error = 1 AND state = 'imported'").count %>
+				<%= errors %>
+				
+			</td>
+			<td align="center" valign="middle" id="astat_success">
+				
+				<% success = GetModel(params[:type]).where("profile_id = #{params[:profile_id]} AND error = 0 AND state = 'imported'").count %>
+				<%= success %>
+				
+			</td>
+			<td align="center" valign="middle" id="astat_completed">
+				
+				<% completed = GetModel(params[:type]).where("profile_id = #{params[:profile_id]} AND state = 'imported'").count %>
+				<%= completed %>
+				
+			</td>
+			<td align="center" valign="middle" id="astat_total">
+				<% total = GetModel(params[:type]).where("profile_id = #{params[:profile_id]}").count+0 %>
+				<%= total %>
+				<% if total > 0 %>
+					<% pct = ((completed.to_f/total.to_f)*100.to_f).round %>
+				<% else %>
+					<% pct = 0 %>
+				<% end %>
+				
+			</td>
+			
+		</tr>
+		
+		<tr>
+			
+			<td align="center" valign="center" colspan="5">
+				
+				<% if pct == 100 %>
+					
+					COMPLETE!
+					<% if errors > 0 %>
+					<br><%= button_to 'Error Log',"/imports/#{params[:profile_id]}/import/#{params[:type]}/log.csv" %>
+					<% end %>
+					
+				<% else %>
+					
+					<div id="bar" class="bar" align="left">
+						<div id="status" class="status" style="width:<%= pct %>%;" align="center">&nbsp;</div>
+					</div>
+					
+				<% end %>
+				
+			</td>
+			
+		</tr>
+		
+		<tr>
+			
+			<td colspan="5" align="center" valign="center">
+				
+				<% ImportAttempts.where("profile_id = #{params[:profile_id]} AND state = '#{params[:type]}'").order("id DESC").limit(1).each do |ia| %>
+					
+					<% if ia.active %>
+						<%= button_to 'STOP','/imports/'+params[:profile_id].to_s+'/import/'+params[:type].to_s+'/stop',onclick: "$(this).parent().parent().parent().html('Loading...');",id: 'stop_btn' %>
+						<script>$(function(){monitorStatus();});</script>
+					<% else %>
+						<% if pct.to_f.round != 100 && pending.to_f.round > 0 %>
+						<%= button_to 'START','/imports/'+params[:profile_id].to_s+'/import/'+params[:type].to_s+'/start',onclick: "$(this).parent().parent().parent().html('Loading...');",id: 'start_btn' %>
+						<% end %>
+					<% end %>
+					
+				<% end %>
+				
+				<% if pct == 100 %>
+					<%= button_to 'RESET','/imports/'+params[:profile_id].to_s+'/import/'+params[:type].to_s+'/reset',onclick: "$(this).parent().parent().parent().html('Loading...');",id: 'reset_btn' %>
+				<% end %>
+				
+			</td>
+			
+		</tr>
+		
+	</table>
+	
+</div>

@@ -1,0 +1,31 @@
+<h1>Listing zendesk_fields</h1>
+
+<table>
+  <tr>
+    <th>State</th>
+    <th>Db name</th>
+    <th>Display name</th>
+    <th>Required</th>
+    <th>Active</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @zendesk_fields.each do |zendesk_field| %>
+  <tr>
+    <td><%= zendesk_field.state %></td>
+    <td><%= zendesk_field.db_name %></td>
+    <td><%= zendesk_field.display_name %></td>
+    <td><%= zendesk_field.required %></td>
+    <td><%= zendesk_field.active %></td>
+    <td><%= link_to 'Show', zendesk_field %></td>
+    <td><%= link_to 'Edit', edit_zendesk_field_path(zendesk_field) %></td>
+    <td><%= link_to 'Destroy', zendesk_field, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Zendesk field', new_zendesk_field_path %>
