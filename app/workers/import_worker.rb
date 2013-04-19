@@ -503,12 +503,9 @@ class ImportWorker
         end
         
       end
-      tmp[:custom_fields] << {
-        id: 22547386,
-        value: item['old_id']
-      }
+      
       c_fields.each do |f|
-        break
+        
         if f.id != 21723132
           
           cfs = {
@@ -568,7 +565,7 @@ class ImportWorker
 
           tmp = {ticket: item[1]}
           item[1]['tags'] = item[1]['tags'].split(',')
-          item[1]['tags'] << 'import_v5'
+          #item[1]['tags'] << 'import_v5'
           pres = {type: params['type'],i => tmp}
           
           call = zd.postCall("/api/v2/imports/tickets.json",tmp.to_json)

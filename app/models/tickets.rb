@@ -94,8 +94,8 @@ class TicketValidator < ActiveModel::Validator
          end
          
       else
-        ticket.assignee_id = 301048188# Craig Willis || Host Analytics
-        #ticket.errors[:base] << "Assignee not found: #{ticket.assignee_email}"
+        #ticket.assignee_id = 301048188# Craig Willis || Host Analytics
+        ticket.errors[:base] << "Assignee not found: #{ticket.assignee_email}"
       end
       
     end
@@ -116,8 +116,8 @@ class TicketValidator < ActiveModel::Validator
       if user.count > 0
         ticket.submitter_id = user.first['zendesk_id']
       else
-        ticket.submitter_id = 301048188# Craig Willis || Host Analytics || Sand: 345472007
-        #ticket.errors[:base] << "Submitter not found: #{ticket.submitter_email}"
+        #ticket.submitter_id = 301048188# Craig Willis || Host Analytics || Sand: 345472007
+        ticket.errors[:base] << "Submitter not found: #{ticket.submitter_email}"
       end
       
     end
@@ -132,8 +132,8 @@ class TicketValidator < ActiveModel::Validator
       if user.count > 0
         ticket.requester_id = user.first['zendesk_id']
       else
-        ticket.requester_id = 301048188# Craig Willis || Host Analytics
-        #ticket.errors[:base] << "Requester not found: #{ticket.requester_email}"
+        #ticket.requester_id = 301048188# Craig Willis || Host Analytics
+        ticket.errors[:base] << "Requester not found: #{ticket.requester_email}"
       end
       
     end
