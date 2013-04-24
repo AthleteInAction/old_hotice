@@ -41,7 +41,7 @@ class CsvWorker
     JP %{\n}
     
     i = 0
-    CSV.foreach(attachment.file.url,:encoding => 'windows-1252:utf-8',:headers => true) do |row|
+    CSV.foreach(attachment.file.url,:encoding => 'windows-1251:utf-8',:headers => true) do |row|
       
       item = {
         'profile_id' => params['profile_id'],
