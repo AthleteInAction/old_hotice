@@ -54,7 +54,8 @@ class TicketValidator < ActiveModel::Validator
     
     if ticket.cdate && ticket.cdate != ''# && 1==2
       
-      ticket.cdate = DateTime.parse("#{ticket.cdate} -07:00").iso8601.to_s
+      ticket.cdate = DateTime.strptime("#{ticket.cdate} -07:00",'%m/%d/%Y %H:%M:%S %z').to_s
+      #ticket.cdate = DateTime.parse("#{ticket.cdate} -07:00").iso8601.to_s
       #ticket.cdate = DateTime.strptime("#{ticket.cdate} -07:00",'%m/%d/%Y %H:%M %z')
       
     else

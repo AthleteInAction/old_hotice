@@ -12,7 +12,8 @@ class CommentValidator < ActiveModel::Validator
     
     if comment.cdate && comment.cdate != ''# && 1==2
       
-      comment.cdate = DateTime.parse("#{comment.cdate} -07:00").iso8601.to_s
+      comment.cdate = DateTime.strptime("#{comment.cdate} -07:00",'%m/%d/%Y %H:%M:%S %z').to_s
+      #comment.cdate = DateTime.parse("#{comment.cdate} -07:00").iso8601.to_s
       #ticket.cdate = DateTime.strptime("#{ticket.cdate} -07:00",'%m/%d/%Y %H:%M %z')
       
     else
