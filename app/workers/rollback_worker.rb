@@ -39,10 +39,10 @@ class RollbackWorker
     
     list = []
     #types = ['organizations','users','groups','tickets']
-    types = ['tickets']
+    types = ['organizations','users']
     types.each_with_index do |type,i|
       
-      GetModel(type).where(pulled: 0,profile_id: @profile.id,state: 'imported',file_id: 126).order('id ASC').each do |item|
+      GetModel(type).where(pulled: 0,profile_id: @profile.id,state: 'imported').order('id ASC').each do |item|
         
         list << {type: type,id: item.zendesk_id}
         

@@ -294,7 +294,7 @@ class ImportWorker
         val = o[f['db_name']]
         if val
           val.strip! if key.include? 'email'
-          #val << '.fake.zd' if key == 'email'
+          #val << '.fake.zd' if key == 'email'   #COMMENT OUT FOR LIVE
           tmp = tmp.merge(key => val)
         end
         
@@ -538,7 +538,7 @@ class ImportWorker
       
     end
     
-    tasks = RinoThread.new(15)
+    tasks = RinoThread.new(10)
     inc = 0
     JP %{Total: #{items.count}\n}
     list.each_with_index do |item,i|
@@ -564,8 +564,8 @@ class ImportWorker
           end
 
           tmp = {ticket: item[1]}
-          item[1]['tags'] = item[1]['tags'].split(',')
-          #item[1]['tags'] << 'import_v5'
+          item[1]['tags'] = []#item[1]['tags'].split(',')
+          item[1]['tags'] << 'sandbox_v2'
           pres = {type: params['type'],i => tmp}
           
           call = zd.postCall("/api/v2/imports/tickets.json",tmp.to_json)

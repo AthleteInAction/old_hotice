@@ -1,0 +1,496 @@
+name,email,external_id,phone,role,custom_role,organization_name,active
+ jrr@jrrcon.com, jrr@jrrcon.com,11164,,end-user,,"Symplified, Inc.",FALSE
+Aaron Rau,aaron.rau@tickr.com,10952,(415) 702-5919,end-user,,Tickr.com,TRUE
+Adam Fong,Adam.Fong@symantec.com,10872,,end-user,,Symantec Corporation,TRUE
+Amit Goel,agoel@rambus.com,10959,4084628724,end-user,,"Rambus, Inc.",TRUE
+Alain Gardier,alain.gardier@dsm.com,10985,,end-user,,Koninklijke DSM NV,TRUE
+Andy Lee,alee@zynga.com,10832,(650) 267-4057,end-user,,Zynga,TRUE
+Alex Stamatiou,alex.stamatiou@frx.com,10122,(631) 858-7625,end-user,,Forest Pharmaceuticals,TRUE
+Alexander Wong,alexander_wong@symantec.com,10748,,end-user,,Symantec Corporation,TRUE
+Alvin Choong,alvin.choong@bakersdelight.com.au,11104,,end-user,,Bakers Delight Holdings,TRUE
+Avery McGill,amcgill@symplified.com,10162,3033184124,agent,,"Symplified, Inc.",TRUE
+Aoife Moloney,amoloney@maninvestments.com,10588,,end-user,,Man Investments,TRUE
+Arlene Mordeno,amordeno@symplified.com,11006,,end-user,,"Symplified, Inc.",FALSE
+Amy Thomas,amthomas@maninvestments.com,10527,,end-user,,Man Investments,TRUE
+N/A andre.williams@wipro.com,andre.williams@wipro.com,10504,,end-user,,Wipro Technologies,TRUE
+Andrew Nette,andrew.nette@bakersdelight.com.au,11033,03 98116183,end-user,,Bakers Delight Holdings,TRUE
+Tony Salerno,anthony.salerno@icsynergy.com,10879,,end-user,,"ICSynergy International, LP.",TRUE
+Anupama K L,anupama.lakshmikantha@wipro.com,11091,,end-user,,Wipro Technologies,TRUE
+Anuradha Nikale,anuradha_nikale@symantec.com,11058,(650)527-9177,end-user,,Symantec Corporation,TRUE
+Ari Nagarajan,ari_nagarajan@symantec.com,10844,,end-user,,Symantec Corporation,TRUE
+Aristides Taveras,Aristides.Taveras@vnsny.org,10851,,end-user,,Visiting Nurse Service of NY,TRUE
+art.spaziano@biogenidec.com,art.spaziano@biogenidec.com,11167,,end-user,,"Symplified, Inc.",FALSE
+Arturo Bautista,Arturo_Bautista@symantec.com,10839,,end-user,,Symantec Corporation,TRUE
+Ash Motiwala,ash@identropy.com,10132,(646) 270-4443,end-user,,Identropy,TRUE
+Ashish Sharma,ashish.sharma@vnsny.org,10200,2126095518,end-user,,Visiting Nurse Service of NY,TRUE
+Ashley Pereira,ashley_pereira@symantec.com,10886,(650) 527-8000,end-user,,Symantec Corporation,TRUE
+Asif Karel,Asif_Karel@symantec.com,10999,,end-user,,Symantec Corporation,TRUE
+Andrew Silliker,asilliker@symplified.com,10814,(303) 318-4188,end-user,,Symplified SE Team,TRUE
+Aubrey Barrera,aubrey.barrera@moodys.com,10989,(212) 553-3657,end-user,,Moody's,TRUE
+N/A avinash.prasad@wipro.com,avinash.prasad@wipro.com,10703,,end-user,,Wipro Technologies,TRUE
+Alan Warwick,awarwick@maninvestments.com,10556,,end-user,,Man Investments,TRUE
+Axel Nennker,axel.nennker@telekom.de,10136,49 303 497 3256,end-user,,Deutsche Telekom AG,TRUE
+Ben Adams,badams@symplified.com,10223,,end-user,,"Symplified, Inc.",FALSE
+Barry Meehan,Barry.Meehan@symantec.com,10873,,end-user,,Symantec Corporation,TRUE
+Brian Czarny,bczarny@symplified.com,11161,,agent,,"Symplified, Inc.",TRUE
+Ben Cheung,ben.cheung@moodys.com,10360,(212) 553-1974,end-user,,Moody's,TRUE
+Berend Boll,berend.boll@t-systems.com,10135,+49 30 34 97 32 46,end-user,,Deutsche Telekom AG,TRUE
+Bernard Sheridan,bernard.sheridan@elan.com,10642,(650) 877-0900,end-user,,"Elan Pharmaceuticals, Inc.",TRUE
+Brian Evans,bevans@novacoast.com,10853,(800) 949-9933 x4832,end-user,,Novacoast,TRUE
+Brett Gabel,bgabel@symplified.com,11141,,end-user,,"Symplified, Inc.",TRUE
+Brian Gaffney,bgaffney@symplified.com,10311,,end-user,,Symplified SE Team,TRUE
+bgaffney314@gmail.com,bgaffney314@gmail.com,11168,,end-user,,"Symplified, Inc.",FALSE
+Bill Burns,bill.burns@netflix.com,10589,(408) 540-3589,end-user,,"Netflix, Inc.",TRUE
+Bill Bubbly,bill@ownzracing.com,10495,,end-user,,"Symplified, Inc.",TRUE
+Billy Hanlon,billy_hanlon@schumachergroup.com,11034,,end-user,,Schumacher Group,TRUE
+Bernard Muth,bmuth@csu.org,10254,(719) 668-8349,end-user,,Colorado Springs Utilities,TRUE
+Bobby Herlambang,bobby_herlambang@symantec.com,10884,,end-user,,Symantec Corporation,TRUE
+Brian Paetow,bpaetow@rewardsnetwork.com,10906,,end-user,,Rewards Network Inc.,TRUE
+Brandon Page,bpage@forestpharm.com,10350,(314) 493-7248,end-user,,Forest Pharmaceuticals,TRUE
+Brian C Carroll,brian.c.carroll@pfizer.com,10249,(212) 733-2323,end-user,,Pfizer,TRUE
+Brian Tuttle,brian.j.tuttle@pfizer.com,10036,(212) 733-2323,end-user,,Pfizer,TRUE
+Brian Weiss,brian.weiss@elan.com,10289,(650) 877-7469,end-user,,"Elan Pharmaceuticals, Inc.",TRUE
+Bruce Freeman,bruce.freeman@bellevue.edu,11126,(402) 557-7196,end-user,,Bellevue University,TRUE
+Bruce Ong,bruce_ong@symantec.com,10734,,end-user,,Symantec Corporation,TRUE
+Budi Darmawan,Budi_darmawan@symantec.com,10997,,end-user,,Symantec Corporation,TRUE
+Christoph Scherer,c.scherer@telekom.de,10270,+49 6151 680 - 712,end-user,,Deutsche Telekom AG,TRUE
+Cameron McWethy,cameron.mcwethy@amylin.com,10801,(858) 552-2200 X0,end-user,,Amylin,TRUE
+Carmen Malangone,carmen_malangone@cotyinc.com,10225,(973) 490-8751,end-user,,Coty Inc.,TRUE
+Corey Coppin,ccoppin@dwr.com,10353,(203) 614-0655,end-user,,"Design Within Reach, Inc.",TRUE
+Chris Curwood,ccurwood@onyx.com,10798,1-650 266 2463,end-user,,"Onyx Pharmaceuticals, Inc.",TRUE
+Carla Ewing,cewing@symplified.com,10427,(303) 318-4188,agent,,Symplified SE Team,TRUE
+Chris Field,cfield@svb.com,10368,(801) 977-3605,end-user,,SVB Financial Group,TRUE
+Chris Forsyth,cforsyth@symplified.com,11051,,agent,,"Symplified, Inc.",FALSE
+Chris Gentner,cgentner@csc.com,10418,(404) 849-1116,end-user,,Computer Sciences Corporation,TRUE
+Chris Nikont,chris.nikont@wipro.com,10537,,end-user,,Wipro Technologies,TRUE
+Christopher Arndt,christopher.arndt@frx.com,10929,(732) 476-6215,end-user,,Forest Pharmaceuticals,TRUE
+Christopher Cheavers,Christopher.Cheavers@vnsny.org,10433,,end-user,,Visiting Nurse Service of NY,TRUE
+Christopher Hydak,chydak@identropy.com,10077,,end-user,,Identropy,TRUE
+Chandrashekhar Kumar,ckumar@rambus.com,11018,-10495,end-user,,"Rambus, Inc.",TRUE
+Cullen Landrum,clandrum@symplified.com,10005,3033184188,end-user,,Symplified SE Team,TRUE
+Chris Melville,cmelville@netflix.com,10559,(408) 540-3282,end-user,,"Netflix, Inc.",TRUE
+Christopher Rea,crea@maninvestments.com,10552,,end-user,,Man Investments,TRUE
+Christian Rogan,crogan@csc.com,10406,4.48E+11,end-user,,Computer Sciences Corporation,TRUE
+coby royer,croyer@symplified.com,10116,(303) 318-4187,end-user,,"Symplified, Inc.",FALSE
+Chris Vashel,cvashel@onyx-pharm.com,10938,,end-user,,"Onyx Pharmaceuticals, Inc.",TRUE
+Cory Whitmore,cwhitmore@maxwell.com,10867,(858) 503-3430,end-user,,Maxwell Technologies,TRUE
+Claire Young,cyoung@symplified.com,10370,303.318.4157,end-user,,"Symplified, Inc.",FALSE
+Dallas Donovan,dallas.donovan@arrow.com,10797,3038246566,end-user,,Arrow Computing Solutions,TRUE
+Damian Myles,damian.myles@dsm.com,10848,,end-user,,Koninklijke DSM NV,TRUE
+Darren Platt,darren@symplified.com,10213,(303) 318-4182,end-user,,"Symplified, Inc.",FALSE
+David Johnson,david.j.johnson@pfizer.com,10127,(973) 355-5671,end-user,,Pfizer,TRUE
+David Miller,David.Miller@symantec.com,10874,,end-user,,Symantec Corporation,TRUE
+David.Nolan@arrowecs.co.uk,David.Nolan@arrowecs.co.uk,11169,,end-user,,"Symplified, Inc.",FALSE
+David Bray,david_braly@tsged.com,11061,469-232-4014,end-user,,Schumacher Group,TRUE
+David Tryse,david_tryse@symantec.com,10888,(650) 527-8000,end-user,,Symantec Corporation,TRUE
+Dana E Baumgartner,dbaumgartne3@csc.com,10400,,end-user,,Computer Sciences Corporation,TRUE
+Daniel Borrego,dborrego@rewardsnetwork.com,10981,305-892-3356,end-user,,Rewards Network Inc.,TRUE
+Daniel Choy,dchoy@yodlee.com,11090,(650) 980-3672,end-user,,Yodlee,TRUE
+Dimitri Clark,dclark@merit.com,10071,,end-user,,Merit Medical Systems,TRUE
+David Cox,dcox@irise.com,10551,(801) 673-3623,end-user,,iRise,TRUE
+Dee Goldschmidt,dee.goldschmidt@pfizer.com,10029,(212) 573-2323,end-user,,Pfizer,TRUE
+Doug Egan,degan3@csc.com,10403,(813) 574-7835,end-user,,Computer Sciences Corporation,TRUE
+Derek Vadala,derek.vadala@moodys.com,10423,(212) 553-4787,end-user,,Moody's,TRUE
+Diana L Oldroyd,diana.l.oldroyd@pfizer.com,10039,(212) 733-2323,end-user,,Pfizer,TRUE
+Dietmar Kr��__ger,dietmar.krueger@t-systems.com,11088,4.93E+11,end-user,,T-Systems International GmbH,TRUE
+Dina Brunstein,dina_brunstein@moma.org,10516,,end-user,,MoMa - Museum of Modern Art,TRUE
+IT Team Charter,dleam@chartercom.com,11109,(314) 253-1950,end-user,,"Charter Communications, Inc.",TRUE
+dlumpkin@gmail.com,dlumpkin@gmail.com,11170,,end-user,,"Symplified, Inc.",FALSE
+David Lumpkin,dlumpkin@symplified.com,10435,,agent,,"Symplified, Inc.",TRUE
+Dustin Mallory,dmallory@symplified.com,10006,(303) 318-4198,end-user,,"Symplified, Inc.",FALSE
+Don Martin,dmartin@tcunet.com,11124,(574) 284-6429,end-user,,Teachers Credit Union,TRUE
+Duncan McNaught,dmcnaught@symplified.com,10217,(303) 318-4156,end-user,,"Symplified, Inc.",FALSE
+Doug Miller,dmiller@symplified.com,10214,(303) 318-4158,end-user,,"Symplified, Inc.",FALSE
+Dan Nascimbeni,dnascimb@csc.com,10399,1-8602211205,end-user,,Computer Sciences Corporation,TRUE
+David Oaxaca,doaxaca@irise.com,10596,,end-user,,iRise,TRUE
+Don Martin,don.martin@tcunet.com,11106,(574) 284-6429,end-user,,Teachers Credit Union,TRUE
+Don Reifsnyder,don_reifsnyder@cotyinc.com,10332,(973) 490-8751,end-user,,Coty Inc.,TRUE
+DONOTREPLY@GlobalResponse.com,DONOTREPLY@GlobalResponse.com,11163,,end-user,,"Symplified, Inc.",FALSE
+Doug Greer,doug.greer@pearson.com,11129,,end-user,,Pearson plc,TRUE
+David Stevens,dstevens@symplified.com,10426,303.318.4186,end-user,,"Symplified, Inc.",FALSE
+Duncan Sharp,duncan.sharp@blueshieldca.com,10737,(415) 229-6619,end-user,,Blue Shield of California,TRUE
+Dave Wilson,dwilson@encoreci.com,10719,4083577210,end-user,,Empowered,TRUE
+David Wolff,dwolff@glgroup.com,11112,2127501995,end-user,,Gerson Lehrman Group,TRUE
+Dylen Turnbull,Dylen_Turnbull@symantec.com,11027,,end-user,,Symantec Corporation,TRUE
+Eduardo Barragan,ebarragan@novacoast.com,11013,,end-user,,Novacoast,TRUE
+N/A edgar.ostrowski@telekom.de,edgar.ostrowski@telekom.de,10626,,end-user,,Deutsche Telekom AG,TRUE
+Edgar Ostrowski,edgar.ostrowski@t-systems.com,11089,49-3034973106,end-user,,T-Systems International GmbH,TRUE
+Edward Liebig,eliebig2@csc.com,10641,(248) 245-3764,end-user,,Computer Sciences Corporation,TRUE
+Eric Ijpelaar,eric.ijpelaar@dsm.com,10984,+31 46 4770451,end-user,,Koninklijke DSM NV,TRUE
+Eric Johnson,Eric.Johnson@critigen.com,10676,,end-user,,Critigen,TRUE
+Eric Olden,eric@symplified.com,10933,(303) 318-4181,end-user,,"Symplified, Inc.",FALSE
+Erik Thompson,erik.thompson@avalara.com,11100,(206) 826-4900 x 1193,end-user,,Avalara,TRUE
+Edward Strum,estrum@dolby.com,10923,(415) 558-0200,end-user,,"Dolby Laboratories, Inc.",TRUE
+Fawad Siddiqui,fawad_siddiqui@bmc.com,10794,713-918-1693,end-user,,"BMC Software, Inc.",TRUE
+Frank A Buchanan,fbuchana@csc.com,10404,,end-user,,Computer Sciences Corporation,TRUE
+Frank Clark,fclark@us.ci.org,11140,719-964-0663,end-user,,Compassion International,TRUE
+Fred Jaime,fjaime@aha.org,11153,,end-user,,American Hospital Association,TRUE
+Fred Luo,fluo@symantec.com,10885,(650) 527-8000,end-user,,Symantec Corporation,TRUE
+FNETS FNETS,fnets-symplified@ml.jp.fujitsu.com,11065,,end-user,,FNETS,TRUE
+Frank Villavicencio,frank@identropy.com,10206,646 229 3031,end-user,,Identropy,TRUE
+Ganesh Narasimhaiya,ganesh.narasimhaiya@wipro.com,10602,,end-user,,Wipro Technologies,TRUE
+Gary Krall,gary_krall@symantec.com,10713,6504264536,end-user,,Symantec Corporation,TRUE
+George Thomas,george.thomas@bellevue.edu,11098,(402) 557-7206,end-user,,Bellevue University,TRUE
+George Wiedermann,george.wiedermann@pfizer.com,10035,(212) 733-2323,end-user,,Pfizer,TRUE
+Guillermo Perez-Vega,gperezvega@csc.com,10395,,end-user,,Computer Sciences Corporation,TRUE
+Grant Sturgis,grant.sturgis@arraybiopharma.com,10894,303-386-1285,end-user,,Array Biopharma,TRUE
+Greg DiStefano,greg.distefano@charming.com,10312,215-633-4629,end-user,,Charming Shoppes Inc.,TRUE
+GSD Team,gsd-team@rambus.com,10958,(650) 947-5000,end-user,,"Rambus, Inc.",TRUE
+Guangxi Wu,Guangxi.Wu@critigen.com,10677,,end-user,,Critigen,TRUE
+Harout Hedeshian,harout@hedeshian.net,10112,,end-user,,"Symplified, Inc.",TRUE
+Heath Provost,heath_provost@schumachergroup.com,10376,(337) 354-1248,end-user,,Schumacher Group,TRUE
+Henry Wong,henry.wong@fuseforward.com,10975,604-656-6304,end-user,,Fuseforward,TRUE
+henry.wong@iceplatform.com,henry.wong@iceplatform.com,11171,,end-user,,"Symplified, Inc.",FALSE
+Huma Halimi,HHalimi@VNSNY.org,10638,,end-user,,Visiting Nurse Service of NY,TRUE
+Helaine Wasserman,hwasserman@identropy.com,10178,908-789-2384,end-user,,Identropy,TRUE
+IAM Pearson,iam@pearson.com,11127,44-20-70102000,end-user,,Pearson plc,TRUE
+Ian Brogden,ian.brogden@eds.com,10130,(303) 961-1850,end-user,,Hewlett-Packard Company,TRUE
+ivan djordjevic,idjordjevic@symplified.com,10815,,end-user,,Symplified SE Team,TRUE
+InfoSec Moody's,infosec_moodys@moodys.com,10990,,end-user,,Moody's,TRUE
+Info Sec,infosec_tm@bmc.com,10922,(713) 918-2507,end-user,,"BMC Software, Inc.",TRUE
+Infrstructure Services,infrastructureservices@onyx-pharm.com,10850,(510) 597-6518,end-user,,"Onyx Pharmaceuticals, Inc.",TRUE
+Inga Regenass,iregenass@merit.com,10070,(801) 316-4821,end-user,,Merit Medical Systems,TRUE
+Ian Smith,ismith@maninvestments.com,10541,+44 (0) 207 144 3754,end-user,,Man Investments,TRUE
+IT Mon Aerohive,it_mon@aerohive.com,11137,,end-user,,Aerohive Networks,TRUE
+IT Engineers IT Engineers,itengineers@amylin.com,10830,,end-user,,Amylin,TRUE
+N/A IT Group,itgroup@lhbcorp.com,11010,218-279-2236,end-user,,LHB,TRUE
+J Ackley,j.ackley@ivieinc.com,10931,(972) 899-4719,end-user,,Ivie & Associates,TRUE
+Jageesh Valappil,jageesh.valappil@wipro.com,10593,91-9845312547,end-user,,Wipro Technologies,TRUE
+Jon K. Aldridge,jaldridge2@csc.com,10461,(847) 605-4219,end-user,,Zurich North America,TRUE
+James Chu,james.chu@tickr.com,10953,(415) 309-8473,end-user,,Tickr.com,TRUE
+jamie Domingue,jamie@tsged.com,10363,1-337-354-1244,end-user,,Schumacher Group,TRUE
+Jason Merrick,jason.f.merrick@gmail.com,10281,(303) 318-4188,end-user,,"Symplified, Inc.",TRUE
+Jason Muldoon,jason.muldoon@moodys.com,10643,+1.212.553.4045,end-user,,Moody's,TRUE
+Jason Rouault,jason.rouault@hp.com,10932,(970) 227-5267,end-user,,Hewlett-Packard Company,TRUE
+Jason Viafora,jason.viafora@quberasolutions.com,11048,6198085920,end-user,,Qubera Solutions Inc.,TRUE
+Jason Shueh,jason@empowered.com,10835,,end-user,,Empowered,TRUE
+Jeff Chang,jchang@identropy.com,10285,(201) 580-2699,end-user,,Identropy,TRUE
+Jonathan Chiu Chiu,jchiu@parature.com,10002,,end-user,,Test Account,TRUE
+jcroteau@nxstage.com,jcroteau@nxstage.com,11172,,end-user,,"Symplified, Inc.",FALSE
+Joseph DiMauro,jdimauro@symplified.com,10215,(303) 318-4188,end-user,,"Symplified, Inc.",TRUE
+Jeff Meanor,jeff.meanor@palmbeachschools.org,10361,(561) 357-1116,end-user,,Palm Beach County School District,TRUE
+Jeff Webb,jeff.webb@mangroupplc.com,10543,441443179,end-user,,Man Investments,TRUE
+Jeff Ras,jeffery_ras@symantec.com,10630,(650) 426-5045,end-user,,Symantec Corporation,TRUE
+John Emerson,jemerson@symplified.com,10158,,end-user,,"Symplified, Inc.",FALSE
+Jerk Store,jerkstore@symplified.com,10613,(303) 777-7777,end-user,,Symplified SE Team,TRUE
+Jesse Staugaard,jesse.staugaard@amylin.com,10049,(858) 458-8596,end-user,,Amylin,TRUE
+Jessica Sobotkiewicz,jessica.sobotkiewicz@symantec.com,10875,(650) 527-8000,end-user,,Symantec Corporation,TRUE
+jfaghani@rambus.com,jfaghani@rambus.com,11173,,end-user,,"Symplified, Inc.",FALSE
+Joe Farrell,jfarrell@symplified.com,10165,650.284.5579,end-user,,"Symplified, Inc.",FALSE
+Jim Kincaid,jim.kincaid@bellevue.edu,11080,(402) 557-7221,end-user,,Bellevue University,TRUE
+Jim Brigham,Jim_Brigham@symantec.com,10978,7814549664,end-user,,Symantec Corporation,TRUE
+Jim Klein,jim_klein@bmc.com,10804,,end-user,,"BMC Software, Inc.",TRUE
+Jeff Martin,jmartin49@csc.com,10419,(571) 233-2463,end-user,,Computer Sciences Corporation,TRUE
+James Mazzanti,jmazzanti@dwr.com,10065,(415) 676-6500,end-user,,"Design Within Reach, Inc.",TRUE
+Jean McAuliffe,jmcauliffe@symplified.com,10219,(303) 318-4197,end-user,,"Symplified, Inc.",FALSE
+Jason McFarland,jmcfarland@symplified.com,10967,,admin,,"Symplified, Inc.",TRUE
+Joachim Lassus,joachim_lassus@symantec.com,10887,(650) 527-8000,end-user,,Symantec Corporation,TRUE
+Joakim Johansson,joakim.johansson@hp.com,10279,,end-user,,Hewlett-Packard Company,TRUE
+Joanne Stubbs,joanne.stubbs@bakersdelight.com.au,11101,,end-user,,Bakers Delight Holdings,TRUE
+joe white,joe.white@blueshieldca.com,10749,9999999999,end-user,,Blue Shield of California,TRUE
+Joe Pierce,joe@merit.com,10252,(801) 208-4427,end-user,,Merit Medical Systems,TRUE
+Joel Boymel,joel.boymel@arraybiopharma.com,10896,(303) 381-6600 X9,end-user,,Array Biopharma,TRUE
+Joerg Heuer,joerg.heuer@telekom.de,10271,,end-user,,Deutsche Telekom AG,TRUE
+John Boado,john.buda@hp.com,10025,(650) 857-1501,end-user,,Hewlett-Packard Company,TRUE
+John Markham,john.markham@scrippsnetworks.com,10302,(865) 560-3980,end-user,,Scripps Networks Interactive,TRUE
+John Wade,john.wade@charming.com,10934,(215) 633-4911,end-user,,Charming Shoppes Inc.,TRUE
+John Maxwell,John_Maxwell@schumachergroup.com,11002,,end-user,,Schumacher Group,TRUE
+John Mavretish,johnmav@yahoo.com,10919,508-450-0878,end-user,,"Symplified, Inc.",TRUE
+Jim Ong,jong8@csc.com,10417,,end-user,,Computer Sciences Corporation,TRUE
+Jonti McLaren,jonti@symplified.com,10119,650.331.0615,agent,,"Symplified, Inc.",FALSE
+Joris Antwerpen-van,joris.antwerpen-van@dsm.com,10849,,end-user,,Koninklijke DSM NV,TRUE
+Jennifer Osborn,josborn@symplified.com,10120,303-318-4151,end-user,,"Symplified, Inc.",FALSE
+Josh Forman,josh@symplified.com,10164,303-318-4183,agent,,"Symplified, Inc.",FALSE
+Joshua Forman,joshuajforman@gmail.com,10819,(972) 899-4719,end-user,,Ivie & Associates,TRUE
+jrabasa@rambus.com,jrabasa@rambus.com,11174,,end-user,,"Symplified, Inc.",FALSE
+John Silvia,jsilvia@symplified.com,10220,(303) 318-4161,end-user,,"Symplified, Inc.",TRUE
+James Sims,jsims8@csc.com,10413,3023916536,end-user,,Computer Sciences Corporation,TRUE
+John Sisley,jsisley@csc.com,10407,,end-user,,Computer Sciences Corporation,TRUE
+Jim Skulstad,jskulsta@csc.com,10624,(630) 472-2763,end-user,,Computer Sciences Corporation,TRUE
+Jason Thomas,jthomas@merit.com,10073,(781) 681-7927,end-user,,Merit Medical Systems,TRUE
+Jason Treft,jtreft@merit.com,10154,(801) 208-4276,end-user,,Merit Medical Systems,TRUE
+Juan Montes,juan_montes@moma.org,10553,(212) 708-9878,end-user,,MoMa - Museum of Modern Art,TRUE
+Joshua Van Houten,jvanhouten@symplified.com,10979,,admin,,"Symplified, Inc.",TRUE
+Jay Wallingford,jwallingford@symplified.com,10212,(303) 318-4199,agent,,"Symplified, Inc.",FALSE
+Kathy Maciejeski,Kathy.Maciejeski@lhbcorp.com,11071,,end-user,,LHB,TRUE
+KC Berg,kberg@symplified.com,10221,(303) 318-4188,end-user,,"Symplified, Inc.",FALSE
+Kay Byers,kbyers@csc.com,10416,302-391-6405,end-user,,Computer Sciences Corporation,TRUE
+Karthik Chakkarapani,kchakkarapani@aha.org,10147,312 422 2228,end-user,,American Hospital Association,TRUE
+Keith Viens,keith.viens@espn.com,10900,8607667447,end-user,,ESPN,TRUE
+Keith Thibodeaux,keith_thibodeaux@schumachergroup.com,10738,,end-user,,Schumacher Group,TRUE
+Karim Elatov,kelatov@symplified.com,11156,,agent,,"Symplified, Inc.",TRUE
+Kelley Boothe,kelly.a.booth@pfizer.com,10016,(860) 686-0512,end-user,,Pfizer,TRUE
+Ken Yu,ken.yu@zurichna.com,10378,847 605 4219,end-user,,Zurich North America,TRUE
+Kenneth Robinson,kenneth.robinson@biogenidec.com,10963,7814645582,end-user,,Biogen Idec Inc.,TRUE
+Ken Taylor,kentaylor@netflix.com,10803,,end-user,,"Netflix, Inc.",TRUE
+Kevin Barrett,kevin.barrett@elan.com,10259,(650) 877-0900,end-user,,"Elan Pharmaceuticals, Inc.",TRUE
+Kevin McDermott,kevin.mcdermott@charming.com,10810,(215) 245-9100 x6257,end-user,,Charming Shoppes Inc.,TRUE
+Kenneth Hwang,khwang@novacoast.com,11047,,end-user,,Novacoast,TRUE
+Kitty kelly,kkelly34@csc.com,10393,(803) 979-1837,end-user,,Computer Sciences Corporation,TRUE
+Kenneth King,kking@irise.com,10576,(310) 426-7891,end-user,,iRise,TRUE
+Kathy Morey,kmorey@symplified.com,11157,,admin,,"Symplified, Inc.",TRUE
+N/A kruegerd@telekom.de,kruegerd@telekom.de,10686,,end-user,,Deutsche Telekom AG,TRUE
+Ken Schwartzreich,kschwartzreich@identropy.com,10072,,end-user,,Identropy,TRUE
+Kendal Stitzel,kstitzel@symplified.com,11086,,end-user,,"Symplified, Inc.",TRUE
+Ken Tuitele,ktuitele@symplified.com,10610,(303) 318-4188,end-user,,"Symplified, Inc.",TRUE
+kurt anderson,kurt.d.anderson@pfizer.com,10128,(212) 573-2323,end-user,,Pfizer,TRUE
+Kory Wilson,kwilson@irise.com,10579,(925) 253-3964,end-user,,iRise,TRUE
+Kirk Zahery,kzahery@symplified.com,10453,,end-user,,"Symplified, Inc.",TRUE
+Lee Andrews,landrews@maninvestments.com,10550,2.07E+12,end-user,,Man Investments,TRUE
+larry.whiteside@vnsny.org,larry.whiteside@vnsny.org,11175,,end-user,,"Symplified, Inc.",FALSE
+Lauren Lequerique,lauren.lequerique@pearson.com,11130,2125551212,end-user,,Pearson plc,TRUE
+lawrence york,lawrence.york@scrippsnetworks.com,10362,865.560.4010,end-user,,Scripps Networks Interactive,TRUE
+Lisa Bergamo,lbergamo@symplified.com,10664,,end-user,,"Symplified, Inc.",FALSE
+Lincoln Cannon,lcannon@merit.com,10131,(801) 316-4821,end-user,,Merit Medical Systems,TRUE
+Lee Penning,lee.penning@collabworks.com,10691,"877-807-8080, Ex: 6",end-user,,CollabWorks,TRUE
+lenore.tumey@gmail.com,lenore.tumey@gmail.com,11176,,end-user,,"Symplified, Inc.",FALSE
+leslie.stevens@gogrid.com,leslie.stevens@gogrid.com,11177,,end-user,,"Symplified, Inc.",FALSE
+Lisa Flynn,lflynn@parature.com,10696,5717306249,end-user,,Parature Support Test Account,TRUE
+Lilly Leboff,Lilly.Leboff@symantec.com,10876,,end-user,,Symantec Corporation,TRUE
+lin.ma@fuseforward.com,lin.ma@fuseforward.com,11178,,end-user,,"Symplified, Inc.",FALSE
+Linda Frazier,linda.frazier@zurichna.com,10460,8476056729,end-user,,Zurich North America,TRUE
+Lindsay Saksa,lindsay.saksa@elan.com,10079,650.616.2657 ,end-user,,"Elan Pharmaceuticals, Inc.",TRUE
+Laz Maicas,Lmacias@symplified.com,11139,,end-user,,"Symplified, Inc.",TRUE
+Lee Rockledge,lrocklage@zeltiq.com,10735,650-207-4151,end-user,,Zeltiq,TRUE
+Lenore Tumey,ltumey@symplified.com,10503,,admin,,"Symplified, Inc.",TRUE
+Lutz Morgenstern,lutz.morgenstern@t-systems.com,10149,+49 (30) 34973288,end-user,,Deutsche Telekom AG,TRUE
+Michael Gaertner,m.gaertner@telekom.de,10176,687080,end-user,,Deutsche Telekom AG,TRUE
+Macy Dennis,macy.dennis@amylin.com,10233,(858) 458-8532,end-user,,Amylin,TRUE
+Maggie Papa,maggie.papa@palmbeachschools.org,10858,(561) 434-8725,end-user,,Palm Beach County School District,TRUE
+Masaru Akizuki,makizuki@jscom.co.jp,10795,,end-user,,"J's Communication Co., Ltd",TRUE
+Manjunath Alkod,malkod@csc.com,10462,(847) 605-4219,end-user,,Zurich North America,TRUE
+Mark Damm,mark.damm@fuseforward.com,10970,8885193450,end-user,,Fuseforward,TRUE
+mark.gildner@tcunet.com,mark.gildner@tcunet.com,11179,,end-user,,"Symplified, Inc.",FALSE
+Mark Lin,mark.lin@moodys.com,10290,(212) 553-4097,end-user,,Moody's,TRUE
+Mark Rout,mark@omnetic.com,10925,(415) 489-7999,end-user,,Cloud Sherpas,TRUE
+Martin Gee,martin.gee@icsynergy.com,10854,(214) 764-7644,end-user,,"ICSynergy International, LP.",TRUE
+Matthew Tyler-Dimond,matthew.tyler-dimond@pearson.com,11131,+44 (0)1865 314449,end-user,,Pearson plc,TRUE
+Matthew Boeckman,mboeckman@symplified.com,10004,,agent,,"Symplified, Inc.",FALSE
+Mark Callahan,mcallahan@symplified.com,10667,,end-user,,"Symplified, Inc.",TRUE
+Matthew Carter,mcarter@symplified.com,10856,,end-user,,Symplified SE Team,TRUE
+Michael Chiles,mchiles@qualcomm.com,11023,(858) 845-7473,end-user,,Qualcomm Incorporated,TRUE
+Mike Corbisiero,mcorbisiero@symplified.com,10157,(303) 318-4188,end-user,,"Symplified, Inc.",FALSE
+Md Abdul Samad,md.abdul.samad@zurichna.com,10463,(847) 605-4219,end-user,,Zurich North America,TRUE
+Mario Duff,mduff@qualcomm.com,11093,,end-user,,Qualcomm Incorporated,TRUE
+Ops Notification,mdypsdbas@moodys.com,10768,,end-user,,Moody's,TRUE
+Scott Messina,messinas@espn.com,10548,(860) 766-4232,end-user,,ESPN,TRUE
+Michael Hirsch,mhirsch@symplified.com,10211,(303) 318-4159,end-user,,"Symplified, Inc.",TRUE
+Michael Conte,michael.conte@moodys.com,10421,(212) 553-7464,end-user,,Moody's,TRUE
+Michael Devita,michael.devita@frx.com,10928,(732) 476-6215,end-user,,Forest Pharmaceuticals,TRUE
+Michael Platoff,michael.platoff@pfizer.com,10175,(212) 733-5170,end-user,,Pfizer,TRUE
+Michael Schneider,michael.schneider@vnsny.org,10863,212-609-551-,end-user,,Visiting Nurse Service of NY,TRUE
+Mike Martin,michael_martin@symantec.com,10646,650.426.5588,end-user,,Symantec Corporation,TRUE
+N/A TG Infra ProdServices OSD IT Ops,michito@maninvestments.com,10587,,end-user,,Man Investments,TRUE
+N/A mika.kack@wipro.com,mika.kack@wipro.com,10539,,end-user,,Wipro Technologies,TRUE
+Mike Chiburis,mike.chiburis@bellevue.edu,11079,(402) 557-7220,end-user,,Bellevue University,TRUE
+N/A TG Infra ProdServices OSD IT Ops (London),mildnito2@maninvestments.com,10454,,end-user,,Man Investments,TRUE
+Mindy Pedersen,mindy.r.pedersen@pfizer.com,10045,(212) 733-2323,end-user,,Pfizer,TRUE
+Merit Notification,misops@merit.com,10018,,end-user,,Merit Medical Systems,TRUE
+Mark Lewis,mlewis@dwr.com,10635,,end-user,,"Design Within Reach, Inc.",TRUE
+Matthew McCanless,mmccanless@novacoast.com,10852,800-9494-9933 ext. 4806,end-user,,Novacoast,TRUE
+Margaret A Mckay,mmckay3@csc.com,10706,,end-user,,Computer Sciences Corporation,TRUE
+Mohan Chikkajataka,mohan.chikkajataka@moodys.com,10260,,end-user,,Moody's,TRUE
+Monica Antonie,monica_antonie@moma.org,10522,(212) 708-9700,end-user,,MoMa - Museum of Modern Art,TRUE
+Monika Lauterbach,monika.lauterbach@telekom.de,10272,,end-user,,Deutsche Telekom AG,TRUE
+Netcool Monitoring,monitoring.netcool@blueshieldca.com,10866,(415) 229-5000,end-user,,Blue Shield of California,TRUE
+Mose Sam,mose.j.sam@pfizer.com,10037,(212) 733-2323,end-user,,Pfizer,TRUE
+Michael Paik,mpaik@symplified.com,10239,,end-user,,"Symplified, Inc.",FALSE
+Megan Papenfuss,mpapenfuss@onyx-pharm.com,10755,650-255-4529,end-user,,"Onyx Pharmaceuticals, Inc.",TRUE
+Max Parris,mparris@symplified.com,10246,303-318-4207,end-user,,"Symplified, Inc.",FALSE
+Marty Stephens,mstephens@merit.com,10069,(801) 316-4821,end-user,,Merit Medical Systems,TRUE
+Malaya Swain,mswain4@csc.com,11054,,end-user,,Zurich North America,TRUE
+Michael Swiencki,mswiencki@maxwell.com,10747,858.503.3471,end-user,,Maxwell Technologies,TRUE
+N/A murali.nagaraja@wipro.com,murali.nagaraja@wipro.com,10603,,end-user,,Wipro Technologies,TRUE
+Melvin Vaughan,mvaughan6@csc.com,10396,770-367-2874,end-user,,Computer Sciences Corporation,TRUE
+Michael P Whalen,mwhalen6@csc.com,10410,,end-user,,Computer Sciences Corporation,TRUE
+Kumar Niture,Nandkumar.Niture@charter.com,11154,,end-user,,"Charter Communications, Inc.",TRUE
+Naren Jangid,naren.jangid@raahtech.com,10198,(678) 735-9229,end-user,,RAAH Technologies,TRUE
+Naresh Nekkanti,naresh.nekkanti@moodys.com,10067,,end-user,,Moody's,TRUE
+Nathan Hogan,Nathan.Hogan@symantec.com,10871,,end-user,,Symantec Corporation,TRUE
+Nathan Romanchuk,nathan.m.romanchuk@pfizer.com,10182,(212) 733-2323,end-user,,Pfizer,TRUE
+Neel Patel,neel.patel@cloudsherpas.com,10926,(415) 489-7999,end-user,,Cloud Sherpas,TRUE
+Neel Pujara,neel.pujara@frx.com,11000,(631) 858-7515,end-user,,Forest Pharmaceuticals,TRUE
+Neelratna Pujara,neelratna.h.pujara@pfizer.com,10129,(973) 355-5682,end-user,,Pfizer,TRUE
+Notification Email,netops@frx.com,10354,,end-user,,Forest Pharmaceuticals,TRUE
+Nico Popp,nicolas_popp@symantec.com,10732,,end-user,,Symantec Corporation,TRUE
+Neal Lawson,nlawson@empowered.com,11077,951-588-4252,end-user,,Empowered,TRUE
+Nigel McClammy,nmcclammy@symplified.com,11005,,end-user,,Symplified SE Team,TRUE
+Nora A O'Donnell,nodonne2@csc.com,10405,,end-user,,Computer Sciences Corporation,TRUE
+Norbert Lagos,norbert.lagos@dentsunetwork.com,11007,(212) 261-4291,end-user,,Dentsu Network,TRUE
+notification@jobvite.com,notification@jobvite.com,11180,,end-user,,"Symplified, Inc.",FALSE
+Nick Post,npost@symplified.com,11160,,agent,,"Symplified, Inc.",TRUE
+Norm Smith,nsmith@symplified.com,10611,,end-user,,"Symplified, Inc.",FALSE
+Nicole Stephens,nstephens@symplified.com,10924,303.318.4137,end-user,,Symplified Partner Portal,TRUE
+Empowered Ops,ops@empowered.com,11105,(408) 357-7210,end-user,,Empowered,TRUE
+Ops Symplified,ops@symplified.com,11159,,agent,,"Symplified, Inc.",TRUE
+Owen Xu,oxu@merit.com,10250,,end-user,,Merit Medical Systems,TRUE
+Pat Goss,pat.goss@biogenidec.com,10859,(781) 464-1677,end-user,,Biogen Idec Inc.,TRUE
+Pat Moscarelli,pat.moscarelli@aimco.com,10255,(303) 691-4314,end-user,,Apartment Investment and Management Company,TRUE
+Patrick Roberts,patrick.roberts@elan.com,10055,(650) 794-4466,end-user,,"Elan Pharmaceuticals, Inc.",TRUE
+Paul Lempereur,paul.lempereur@bakersdelight.com.au,11102,,end-user,,Bakers Delight Holdings,TRUE
+Paul Manning,paul.manning@pearson.com,11132,07725n220115,end-user,,Pearson plc,TRUE
+Pankaj Bagga,Pbagga@parature.com,10945,,end-user,,Parature Support Test Account,TRUE
+Paul Cartee,pcartee@symplified.com,10222,(303) 318-4188,end-user,,"Symplified, Inc.",FALSE
+Pam Casale,pcasale@csc.com,10409,(703) 641-3231,end-user,,Computer Sciences Corporation,TRUE
+Peter Attwood,peter.attwood@biogenidec.com,10826,,end-user,,Biogen Idec Inc.,TRUE
+Peter Vissicchio,Peter.Vissicchio@frx.com,11150,,end-user,,Forest Pharmaceuticals,TRUE
+Siddhartha Prasanna C Ghattamaneni,pghattamanen@csc.com,10464,(847) 605-4219,end-user,,Zurich North America,TRUE
+Phil Braum,phil.braum@hp.com,10276,(303) 277-7686,end-user,,Hewlett-Packard Company,TRUE
+Phillip Smiley,phil_smiley@bmc.com,10472,,end-user,,"BMC Software, Inc.",TRUE
+Philip Lambert,plambert@csc.com,10625,+1.630.472.2579,end-user,,Computer Sciences Corporation,TRUE
+postmaster@amylin.com,postmaster@amylin.com,11181,,end-user,,"Symplified, Inc.",FALSE
+postmaster@biogenidec.com,postmaster@biogenidec.com,11182,,end-user,,"Symplified, Inc.",FALSE
+postmaster@svbank.com,postmaster@svbank.com,11183,,end-user,,"Symplified, Inc.",FALSE
+postmaster@VNSNY.org,postmaster@VNSNY.org,11165,,end-user,,"Symplified, Inc.",FALSE
+Prajeet Gadekar,Prajeet.Gadekar-non-empl@moodys.com,10663,,end-user,,Moody's,TRUE
+Paulo Stuppa,pstuppa@symplified.com,10921,,end-user,,"Symplified, Inc.",TRUE
+Penzola Thornton,pthornt4@csc.com,10392,1-302 391-6494,end-user,,Computer Sciences Corporation,TRUE
+pt-usargosopsupport Pearson,pt-usargosopsupport@pearson.com,11128,44-20-70102000,end-user,,Pearson plc,TRUE
+Quinn O'Donnell,qodonnell@irise.com,10562,,end-user,,iRise,TRUE
+Chris Forsyth,quart81@gmail.com,10717,,end-user,,"Symplified, Inc.",FALSE
+Raghuram Gorur,raghuram.gorur@wipro.com,10566,91-9845312547,end-user,,Wipro Technologies,TRUE
+Rajat Mishra,rajat.mishra-non-empl@moodys.com,10068,,end-user,,Moody's,TRUE
+Ram Damisetty,Ram.Damisetty@vnsny.org,10628,,end-user,,Visiting Nurse Service of NY,TRUE
+Ram maguluri,ram.maguluri@raahtech.com,10291,1-7708267156,end-user,,RAAH Technologies,TRUE
+Ramses Moya,ramses.moya@icsynergy.com,10917,(416) 907-6678,end-user,,"ICSynergy International, LP.",TRUE
+Ramses Veloso,ramses.veloso@palmbeachschools.org,10110,(561) 434-8439,end-user,,Palm Beach County School District,TRUE
+Robert Baer,rbaer@csc.com,10412,610-368-9948,end-user,,Computer Sciences Corporation,TRUE
+Ravinder Bahra,rbahra@symplified.com,10905,,agent,,Symplified,TRUE
+Ralph Hubregsen,rhubregsen@symplified.com,10428,1-3033772882,end-user,,"Symplified, Inc.",TRUE
+Rich Marcello,rich.marcello@hp.com,10024,(650) 857-1501,end-user,,Hewlett-Packard Company,TRUE
+Richard Getz,richard.getz@critigen.com,10668,,end-user,,Critigen,TRUE
+Rodney Thompson,rjthompson@csu.org,10930,,end-user,,Colorado Springs Utilities,TRUE
+rkarkera@rambus.com,rkarkera@rambus.com,11184,,end-user,,"Symplified, Inc.",FALSE
+Ronald Knode,rknode@csc.com,10408,(240) 456-6067,end-user,,Computer Sciences Corporation,TRUE
+Robert Mays,rmays@dwr.com,10632,203 450 8341,end-user,,"Design Within Reach, Inc.",TRUE
+Robert Wolf Mirasol,rmirasol@maxwell.com,10746,858.503.3475,end-user,,Maxwell Technologies,TRUE
+Ravi Mohite,rmohite@irise.com,10597,,end-user,,iRise,TRUE
+Robert Koeten,rob_koeten@symantec.com,10751,650-527-3280,end-user,,Symantec Corporation,TRUE
+Rob Ash,robert.ash@csc.com,10420,(303) 222-7694,end-user,,Computer Sciences Corporation,TRUE
+Robert Herman,robert.herman@biogenidec.com,11083,(781) 464-5107,end-user,,Biogen Idec Inc.,TRUE
+Robert Hayward,robert_hayward@bmc.com,11028,(713) 918-2507,end-user,,"BMC Software, Inc.",TRUE
+Robert Rosa,Robert_Rosa@symantec.com,11026,6505277683,end-user,,Symantec Corporation,TRUE
+Robin Gaal,robin.gaal@dsm.com,11111,,end-user,,Koninklijke DSM NV,TRUE
+Robin Gaal,robin.gaal@traxion.com,10865,,end-user,,Traxion,TRUE
+Rod Copeland,rod.copeland@chartercom.com,11110,(314) 403-5623,end-user,,"Charter Communications, Inc.",TRUE
+Roger Haden,roger.haden@hp.com,10277,(972) 604-6000,end-user,,Hewlett-Packard Company,TRUE
+roger.olivier@zeltiq.com,roger.olivier@zeltiq.com,11185,,end-user,,"Symplified, Inc.",FALSE
+Roger Olivier,rolivier@zeltiq.com,10159,650-207-4151,end-user,,Zeltiq,TRUE
+Roman Schaal,roman.schaal@moodys.com,10966,(212) 553-4593,end-user,,Moody's,TRUE
+Roman Visintine,roman@empowered.com,11073,(650) 924-2484,end-user,,Empowered,TRUE
+Ryan Ratkiewicz,rratkiewicz@symplified.com,10936,(303) 318-4188,agent,,"Symplified, Inc.",FALSE
+Rodney Thompson,rthompson@csu.org,10022,(719) 668-8435,end-user,,Colorado Springs Utilities,TRUE
+Ruud Gijsbers,ruud@ip4sure.nl,10813,,end-user,,IP4Sure BV,TRUE
+Ranjeet Vidwans,rvidwans@identropy.com,10334,,end-user,,Identropy,TRUE
+rworobel@symplified.com,rworobel@symplified.com,11162,,agent,,"Symplified, Inc.",FALSE
+rworobel@symplified.com,rworobel@symplified.com,11186,,end-user,,"Symplified, Inc.",FALSE
+Ryan Hogan,ryan.hogan@elan.com,10056,(650) 794-2334,end-user,,"Elan Pharmaceuticals, Inc.",TRUE
+ryan@ryanrat.com,ryan@ryanrat.com,11187,,end-user,,"Symplified, Inc.",FALSE
+N/A sai.lakshmi@wipro.com,sai.lakshmi@wipro.com,10536,,end-user,,Wipro Technologies,TRUE
+Sales Symplified,sales@symplified.com,11158,,agent,,"Symplified, Inc.",TRUE
+salesforce@news.marketing.salesforce.com,salesforce@news.marketing.salesforce.com,11188,,end-user,,"Symplified, Inc.",FALSE
+Santosh Haranath,santosh.haranath@quberasolutions.com,10915,+1 650 294 4460,end-user,,Qubera Solutions Inc.,TRUE
+Satya Gade,satya.gade@moodys.com,10422,212-341-5213,end-user,,Moody's,TRUE
+ESPN SAW,saw@espn.com,10883,(860) 766-4041,end-user,,ESPN,TRUE
+Shuan Baker,SBaker@us.ci.org,11143,,end-user,,Compassion International,TRUE
+Sunil Bhargava,sbhargava6@csc.com,10402,,end-user,,Computer Sciences Corporation,TRUE
+Steve Brickley,sbrickley@irise.com,10604,,end-user,,iRise,TRUE
+Steve Callery,scallery@dclibraries.org,10899,,end-user,,Douglas County Libraries,TRUE
+Steven Carter,scarter@forestpharm.com,10951,(314) 493-7241,end-user,,Forest Pharmaceuticals,TRUE
+Scott Hadden,scott.hadden@biogenidec.com,10898,(781) 464-1680,end-user,,Biogen Idec Inc.,TRUE
+Scott McClellan,scott.mcclellan@hp.com,10278,,end-user,,Hewlett-Packard Company,TRUE
+Scott Reynolds,scott.reynolds@amylin.com,10184,(858) 754-4128,end-user,,Amylin,TRUE
+Scott Wilston,scott.wilston@charming.com,10044,(267) 238-7494,end-user,,Charming Shoppes Inc.,TRUE
+Steve Curtis,scurtis@identropy.com,10352,,end-user,,Identropy,TRUE
+Sean Peltier,sean_peltier@schumachergroup.com,10244,(337) 354-1246,end-user,,Schumacher Group,TRUE
+Sergi Isasi,sergi_isasi@symantec.com,10868,,end-user,,Symantec Corporation,TRUE
+Bakers Delight Service Desk,servicedesk@bakersdelight.com.au,11103,,end-user,,Bakers Delight Holdings,TRUE
+Shaun Feaker,sfeaker@symplified.com,10800,,agent,,Symplified,TRUE
+Shawna Freeborn,sfreeborn@symplified.com,10218,(303) 318-4188,end-user,,"Symplified, Inc.",TRUE
+Simon Geale,sgeale@maninvestments.com,10600,,end-user,,Man Investments,TRUE
+Siki Giunta,sgiunta@csc.com,10397,,end-user,,Computer Sciences Corporation,TRUE
+Shawn Mitchell,shawn.mitchell@gmail.com,10920,913-220-6684,agent,,"Symplified, Inc.",TRUE
+shubha katti,shubha.v01@wipro.com,11092,,end-user,,Wipro Technologies,TRUE
+Steve Hunsaker,shunsaker@merit.com,10155,,end-user,,Merit Medical Systems,TRUE
+Ops Notification,simplified@schumachergroup.com,10829,,end-user,,Schumacher Group,TRUE
+Siva Vrs,siva.vrs@wipro.com,10561,-9508,end-user,,Wipro Technologies,TRUE
+Sheethal Jayaram,sjayaram@aha.org,10262,312 422 2228,end-user,,American Hospital Association,TRUE
+Srini Kanugovi,skanugov@qualcomm.com,10870,,end-user,,Qualcomm Incorporated,TRUE
+Sarath Kotti,skotti@csc.com,11053,,end-user,,Zurich North America,TRUE
+Scott Lewis,slewis7@csc.com,10401,(302) 391-7838,end-user,,Computer Sciences Corporation,TRUE
+S Lyons,slyons@symplified.com,10935,(416) 214-2713,end-user,,"Symplified, Inc.",FALSE
+Satish Narayanan,snarayanan@svb.com,11066,480-557-4952,end-user,,SVB Financial Group,TRUE
+Sam Phung,sphung@onyx-pharm.com,10831,,end-user,,"Onyx Pharmaceuticals, Inc.",TRUE
+Steve Pope,spope@symplified.com,10937,+44 7880 728120,end-user,,"Symplified, Inc.",FALSE
+Sharon Prior,sprior@merit.com,10081,,end-user,,Merit Medical Systems,TRUE
+Sakthi Rajendran,srajendran3@csc.com,10394,(408) 564-3334,end-user,,Computer Sciences Corporation,TRUE
+sreedhar@Yodlee.com,sreedhar@Yodlee.com,11166,,end-user,,"Symplified, Inc.",FALSE
+Spike Robinson,srobinson@maninvestments.com,10599,+41 (55) 417 7871,end-user,,Man Investments,TRUE
+Scott Silver,ssilver@irise.com,10569,415-572-1363,end-user,,iRise,TRUE
+SanjayKumar Singh,ssingh86@csc.com,10465,(847) 605-4219,end-user,,Zurich North America,TRUE
+Stan Harris,Stan.Harris@symantec.com,10877,,end-user,,Symantec Corporation,TRUE
+Stephen Jordan,stephen.m.jordan@pfizer.com,10174,(858) 526-4823,end-user,,Pfizer,TRUE
+Steve Bowers,steve_bowers@bmc.com,10595,,end-user,,"BMC Software, Inc.",TRUE
+Steven Kurtz,Steven.Kurtz@symantec.com,10878,,end-user,,Symantec Corporation,TRUE
+Stuart Laidlaw,stuart.laidlaw@hp.com,10380,1-408-873-6034,end-user,,Hewlett-Packard Company,TRUE
+Sunita Bhat,sunita.bhat@wipro.com,10598,91-9845312547,end-user,,Wipro Technologies,TRUE
+Fuseforward Support,support@fuseforward.com,11074,(888) 519-3450,end-user,,Fuseforward,TRUE
+Support Center Staff,supportcenterstaff@rewardsnetwork.com,10842,(305) 892-3343,end-user,,Rewards Network Inc.,TRUE
+Surendra Paladugu,surendra.paladugu@raahtech.com,10161,(203) 979-7686,end-user,,RAAH Technologies,TRUE
+Swati Gulpadia,swati.gulpadia@wipro.com,10534,,end-user,,Wipro Technologies,TRUE
+Qualcomm Symplified Support,symplified.launch.external@qualcomm.com,10949,858-845-7473,end-user,,Qualcomm Incorporated,TRUE
+Symplified External Alerts - Merit Symplified External Alerts - Merit,symplified_external_alerts@merit.com,10828,,end-user,,Merit Medical Systems,TRUE
+Symplified Support,sympl-support@jscom.co.jp,10834,81-3-6222-5858,end-user,,"J's Communication Co., Ltd",TRUE
+Carlina Duggan,sysadmin@ldfr.org,10996,(970) 262-5405,end-user,,Lake Dillon Fire District,TRUE
+System Admins,systemadmins@rewardsnetwork.com,10841,(305) 892-3343,end-user,,Rewards Network Inc.,TRUE
+N/A systemattendant@pfizer.com,systemattendant@pfizer.com,10564,,end-user,,Pfizer,TRUE
+N/A tbass@merit.com,tbass@merit.com,10436,,end-user,,Merit Medical Systems,TRUE
+Teri Black,tblack@forestpharm.com,10280,(314) 493-7222,end-user,,Forest Pharmaceuticals,TRUE
+Timothy Brice,tbrice@symplified.com,10366,7209383371,end-user,,"Symplified, Inc.",FALSE
+Teresa Cahill,teresa.cahill@charming.com,10194,(215) 245-9100 x6137,end-user,,Charming Shoppes Inc.,TRUE
+N/A TGInfraProdServicesPlatformsSupportWindowsGlobal,tginfraprodservicesplatformssupportwindowsglobal@maninvestments.com,10573,,end-user,,Man Investments,TRUE
+Tim Go,tgo@dwr.com,10381,4155189680,end-user,,"Design Within Reach, Inc.",TRUE
+Thomas Eck,Thomas_Eck@dell.com,10823,,end-user,,Moody's,TRUE
+Tien Dihn,tien_dinh@bmc.com,10451,(713) 918-2857,end-user,,"BMC Software, Inc.",TRUE
+Tim Baker,tim.baker@merit.com,10969,,end-user,,Merit Medical Systems,TRUE
+Tim Barker,tim.barker@blueshieldca.com,10880,(415) 229-6859,end-user,,Blue Shield of California,TRUE
+Tim Crean,tim.crean@arraybiopharma.com,10895,(303) 386-1148,end-user,,Array Biopharma,TRUE
+Tim Barker,timbuck@me.com,10910,(415) 229-5000,end-user,,Blue Shield of California,TRUE
+Timothy Murray,timothy.j.murray@pfizer.com,10040,(212) 733-2323,end-user,,Pfizer,TRUE
+Tony L,tlocascio@symplified.com,10501,1-630-000-0000,end-user,,Symplified SE Team,TRUE
+Thinh Luu,tluu@netflix.com,10715,,end-user,,"Netflix, Inc.",TRUE
+Topher Marie,tmarie@symplified.com,10113,(303) 318-4153,end-user,,"Symplified, Inc.",FALSE
+Tokihiko Nakamura,tnakamura@jscom.co.jp,10163,81-3-6222-5858,end-user,,"J's Communication Co., Ltd",TRUE
+Todd Tompkins,todd.tompkins@ivieinc.com,10389,(972) 899-8720,end-user,,Ivie & Associates,TRUE
+Tom Coffy,tom.coffy@scrippsnetworks.com,11025,865-560-4145,end-user,,Scripps Networks Interactive,TRUE
+Tom Heesmans,tom@ip4sure.nl,10799,,end-user,,IP4Sure BV,TRUE
+tony salerno,tony.salerno@icsynergy.com,10918,972-740-4669,end-user,,"ICSynergy International, LP.",TRUE
+Tony Wang,tony.wang@aerohive.com,11138,(408) 510-6157,end-user,,Aerohive Networks,TRUE
+Thomas Phan,tphan@dolby.com,10766,,end-user,,"Dolby Laboratories, Inc.",TRUE
+Trong Doan,Trong_doan@symantec.com,10998,,end-user,,Symantec Corporation,TRUE
+Travis Rupp-Greene,truppgreene@symplified.com,10118,,end-user,,"Symplified, Inc.",FALSE
+Parature Test,tt81842@gmail.com,10690,,end-user,,Parature Support Test Account,TRUE
+Tim Walker,twalker@merit.com,10156,,end-user,,Merit Medical Systems,TRUE
+Travis Yoes,tyoes@symplified.com,10369,(303) 318-4185,end-user,,"Symplified, Inc.",FALSE
+Terrence Young,tyoung@csc.com,10950,(847) 605-4219,end-user,,Zurich North America,TRUE
+Terrance Young,tyoung34@csc.com,10377,630-881-4831,end-user,,Computer Sciences Corporation,TRUE
+Victor Bao,vbao@aerohive.com,11085,(408) 585-6257,end-user,,Aerohive Networks,TRUE
+Sunita Bhat,vishnu.bapatla@wipro.com,11044,,end-user,,Wipro Technologies,TRUE
+Vishwanath Nagaraj,vishwanath.nagaraj@wipro.com,10542,91-9845312547,end-user,,Wipro Technologies,TRUE
+Vic Lanzillotti,vlanzillotti@symplified.com,10282,(303) 318-4188,end-user,,"Symplified, Inc.",FALSE
+Vince Vitale,vvitale@forespharm.com,10947,314-493-7342,end-user,,Forest Pharmaceuticals,TRUE
+Vincent Vitale,vvitale@forestpharm.com,10948,,end-user,,Forest Pharmaceuticals,TRUE
+Warren Bailey,warren.bailey@bakersdelight.com.au,11072,+61 3 9811 6124,end-user,,Bakers Delight Holdings,TRUE
+Wayne Wright,Wayne.Wright@vnsny.org,10882,,end-user,,Visiting Nurse Service of NY,TRUE
+Wayne Home,whome@maninvestments.com,10558,,end-user,,Man Investments,TRUE
+William A Barnes,william.a.barnes@pfizer.com,10227,(212) 573-2323,end-user,,Pfizer,TRUE
+Bill Griep,William.Griep@critigen.com,10675,,end-user,,Critigen,TRUE
+Bill Iselin,william.iselin@espn.com,10704,1-860-766-1553,end-user,,ESPN,TRUE
+William Voges,william.voges@elan.com,10190,(650) 794-4430,end-user,,"Elan Pharmaceuticals, Inc.",TRUE
+woodsb@google.com,woodsb@google.com,11189,,end-user,,"Symplified, Inc.",FALSE
+Bill Riggs,wriggs@csc.com,10398,(302) 391-8934,end-user,,Computer Sciences Corporation,TRUE
+Yihong Fei,yfei@forestpharm.com,11009,,end-user,,Forest Pharmaceuticals,TRUE
+Yuji Kanda,ykanda@jscom.co.jp,10796,-12002,end-user,,"J's Communication Co., Ltd",TRUE
+Yucel Mehmetali Erbilgic,yucel.erbilgic@wipro.com,10563,+44 782 786 0391,end-user,,Wipro Technologies,TRUE
+Zheng Lu,zheng.lu@moodys.com,10861,(212) 553-6999,end-user,,Moody's,TRUE
+Zhenya Rabinovich,zhenya.rabinovich@moodys.com,10769,(212) 553-6999,end-user,,Moody's,TRUE

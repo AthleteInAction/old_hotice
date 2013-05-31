@@ -1,7 +1,14 @@
 class UserValidator < ActiveModel::Validator
   def validate user
     
-    user.email = user.email.to_s.strip
+    user.email = user.email.to_s.strip.downcase
+    
+    # AdMarvel
+    if user.profile_id == 34
+      puts %{\n#{user.email}}
+      user.name = user.email
+      user.role = 'end-user'
+    end
     
     user.active = 1 if user.active.to_s.downcase == 'true'
     user.active = 0 if user.active.to_s.downcase == 'false'
@@ -46,8 +53,8 @@ class ZdUsers < ActiveRecord::Base
   
   attr_accessible :active, :alias, :code, :custom_role_id, :custom_role_name, :details, :email, :error, :external_id, :file_id, :identities, :locale_id, :moderator, :name, :notes, :old_id, :only_private_comments, :organization_id, :organization_name, :phone, :profile_id, :report, :role, :signature, :state, :suspended, :tags, :ticket_restriction, :time_zone, :verified, :zendesk_id, :pulled
   
-  validates_presence_of :email,:name,:role,:if => :not_pulled?
   validates_with UserValidator
+  validates_presence_of :email,:name,:role,:if => :not_pulled?
   validates_uniqueness_of :email,scope: :profile_id,:if => :not_pulled?
 
   def not_pulled?

@@ -12,8 +12,8 @@ class CommentValidator < ActiveModel::Validator
     
     if comment.cdate && comment.cdate != ''# && 1==2
       
-      comment.cdate = DateTime.strptime("#{comment.cdate} -07:00",'%m/%d/%Y %H:%M:%S %z').to_s
-      #comment.cdate = DateTime.parse("#{comment.cdate} -07:00").iso8601.to_s
+      #comment.cdate = DateTime.strptime("#{comment.cdate} -07:00",'%m/%d/%Y %H:%M:%S %z').to_s
+      comment.cdate = DateTime.parse("#{comment.cdate} -08:00").iso8601.to_s
       #ticket.cdate = DateTime.strptime("#{ticket.cdate} -07:00",'%m/%d/%Y %H:%M %z')
       
     else
@@ -38,11 +38,11 @@ class CommentValidator < ActiveModel::Validator
     if author
       comment.author_id = author.zendesk_id
     else
-      #q = "UPDATE tickets SET code = 999,error = 1 WHERE old_id = '#{comment.ticket_id}' AND profile_id = #{comment.profile_id}"
-      #sql.query q
-      #comment.errors[:base] << "Author >>>#{comment.author_email}<<< cannot be found!"
-      comment.old_id = 1
-      comment.author_id = 345472007# Craig Willis
+      q = "UPDATE tickets SET code = 999,error = 1 WHERE old_id = '#{comment.ticket_id}' AND profile_id = #{comment.profile_id}"
+      sql.query q
+      comment.errors[:base] << "Author >>>#{comment.author_email}<<< cannot be found!"
+      #comment.old_id = 1
+      #comment.author_id = 345472007# Craig Willis
     end
     
     sql.close

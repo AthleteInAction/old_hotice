@@ -41,7 +41,7 @@ class CsvWorker
     JP %{\n}
     
     i = 0
-    CSV.foreach(attachment.file.url,:encoding => 'windows-1251:utf-8',:headers => true) do |row|
+    CSV.foreach(attachment.file.url,:encoding => 'iso-8859-1',:headers => true) do |row|
       
       item = {
         'profile_id' => params['profile_id'],
@@ -77,7 +77,7 @@ class CsvWorker
         errors = newItem.errors.full_messages.to_s.gsub('"','')
         item = item.merge(errors: errors)
         #JP errors
-        CsvErrors.new(profile_id: params['profile_id'],attempt_id: attempt['id'],alerts: errors,file_id: attachment['id'],data: row.to_s,row: (i+2)).save
+        CsvErrors.new(profile_id: params['profile_id'],attempt_id: attempt['id'],alerts: errors,file_id: attachment['id'],row: (i+2)).save
         
       end
       
