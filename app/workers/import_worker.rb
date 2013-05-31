@@ -565,7 +565,7 @@ class ImportWorker
 
           tmp = {ticket: item[1]}
           item[1]['tags'] = []#item[1]['tags'].split(',')
-          item[1]['tags'] << 'sandbox_v2'
+          item[1]['tags'] << 'sandbox_v3'
           pres = {type: params['type'],i => tmp}
           
           call = zd.postCall("/api/v2/imports/tickets.json",tmp.to_json)

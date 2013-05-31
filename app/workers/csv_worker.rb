@@ -77,7 +77,7 @@ class CsvWorker
         errors = newItem.errors.full_messages.to_s.gsub('"','')
         item = item.merge(errors: errors)
         #JP errors
-        CsvErrors.new(profile_id: params['profile_id'],attempt_id: attempt['id'],alerts: errors,file_id: attachment['id'],row: (i+2)).save
+        CsvErrors.new(profile_id: params['profile_id'],attempt_id: attempt,alerts: errors,file_id: attachment['id'],row: (i+2)).save
         
       end
       

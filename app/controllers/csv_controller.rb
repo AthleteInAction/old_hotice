@@ -99,9 +99,13 @@ class CsvController < ApplicationController
   
   attachment = Attachment.find(params[:attachment_id])
   attempt = CsvAttempt.create(profile_id: params['profile_id'],file_id: attachment['id'])
+  puts %{+++\n}*10
+  test = {profile_id: params['profile_id'],file_id: attachment['id']}
+  puts attempt['id']
+  puts %{+++\n}*10
   attachment.update_attributes(locked: 1,status: 'extracting')
   
-  CsvWorker.perform_async params,attempt
+  CsvWorker.perform_async params,attempt['id']
   
   respond_to do |format|
     format.html { redirect_to '/imports/'+params[:profile_id].to_s+'/csv/'+params[:type].to_s }

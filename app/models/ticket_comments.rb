@@ -29,20 +29,25 @@ class CommentValidator < ActiveModel::Validator
     ZendeskField.where(state: 'ticket_comments').each do |f|
       
       if f.required && (!comment[f.db_name.to_s] || comment[f.db_name.to_s].strip == '')
-        comment.errors[:base] << "#{f.display_name} is required"
+        #comment.errors[:base] << "#{f.display_name} is required"
       end
       
     end
     
-    author = ZdUsers.where(profile_id: comment.profile_id,email: comment.author_email).limit(1).first
-    if author
-      comment.author_id = author.zendesk_id
+    if comment.author_email.to_s.strip.length > 0
+      author = ZdUsers.where(profile_id: comment.profile_id,email: comment.author_email).limit(1).first
+      if author
+        comment.author_id = author.zendesk_id
+      else
+        #q = "UPDATE tickets SET code = 999,error = 1 WHERE old_id = '#{comment.ticket_id}' AND profile_id = #{comment.profile_id}"
+        #sql.query q
+        #comment.errors[:base] << "Author >>>#{comment.author_email}<<< cannot be found!"
+        comment.author_id = 229972004
+        comment.author_email = 'not_found'
+      end
     else
-      q = "UPDATE tickets SET code = 999,error = 1 WHERE old_id = '#{comment.ticket_id}' AND profile_id = #{comment.profile_id}"
-      sql.query q
-      comment.errors[:base] << "Author >>>#{comment.author_email}<<< cannot be found!"
-      #comment.old_id = 1
-      #comment.author_id = 345472007# Craig Willis
+      comment.author_id = 229972004
+      comment.author_email = 'custom'
     end
     
     sql.close
@@ -56,5 +61,6 @@ class TicketComments < ActiveRecord::Base
   attr_accessible :active, :author_email, :author_id, :file_id, :old_id, :profile_id, :public, :ticket_comment_id, :ticket_id, :value, :zendesk_id, :created_at, :cdate
   
   validates_with CommentValidator
+  validates_presence_of :author_email,:value,:ticket_id
   
 end
